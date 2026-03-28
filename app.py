@@ -957,7 +957,7 @@ with col3:
         park_label = None
     selected_park_name = st.selectbox("3️⃣ Select Asset", park_options)
 
-all_parks_mode = selected_park_name.startswith("All parks")
+all_parks_mode = selected_park_name.startswith("All assets")
 
 if not all_parks_mode:
     selected_park = next(p for p in parks_in_scope if p["name"] == selected_park_name)
@@ -1318,4 +1318,3 @@ else:
     st.divider()
     st.markdown("**🔎 Drill into individual parks from this area**")
     st.info("Use the selectors above to pick a specific asset and generate a detailed individual report.")
-
