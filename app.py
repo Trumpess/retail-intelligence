@@ -347,7 +347,7 @@ def generate_opportunities(park, ofcom, companies):
     if gig < 50:
         ops.append("Gigabit connectivity upgrade — current LA area below threshold for modern retail operations and guest WiFi")
     if ff < 60:
-        ops.append("Full fibre campus programme — legacy broadband limiting retailer EPOS, security, and cloud POS systems")
+        ops.append("Full fibre estate upgrade — legacy broadband limiting retailer EPOS, security systems, and cloud point-of-sale")
     if ff > 60 and takeup < 30:
         ops.append("Managed connectivity migration — full fibre available but take-up low; active programme needed across retailer units")
     if g4 < 80:
@@ -386,7 +386,7 @@ def generate_opportunities(park, ofcom, companies):
     # Companies House density
     active_count = sum(1 for c in (companies or []) if c.get("company_status","").lower() == "active")
     if active_count >= 20:
-        ops.append(f"Occupier base — {active_count}+ active registered companies at postcode; campus-wide managed connectivity covers all retailers in single contract")
+        ops.append(f"Occupier base — {active_count}+ active registered companies at postcode; estate-wide managed connectivity covers all retailers in a single contract")
 
     return ops[:8] if len(ops) > 8 else ops
 
@@ -525,7 +525,7 @@ def build_park_header(story, park, styles):
     story.append(t)
     story.append(Spacer(1, 6*mm))
 
-def build_park_profile_table(story, park, styles):
+def build_park_profile_table(story, park, styles, ws_data=None):
     story.append(Paragraph("Park Profile", styles["h2"]))
     fields = [
         ("Cluster / Area",    park.get("_cluster", "")),
@@ -536,8 +536,8 @@ def build_park_profile_table(story, park, styles):
         ("Landlord",          park.get("landlord", "")),
         ("Anchor Tenants",    ", ".join(park.get("anchor_tenants") or [])),
         ("Repositioning",     "Yes — active redevelopment" if park.get("repositioning") else "No"),
-        ("WiredScore",        park.get("wiredScore") or "Not confirmed"),
-        ("SmartScore",        park.get("smartScore") or "Not confirmed"),
+        ("WiredScore",        _ws_label(ws_data, "wiredScore") if ws_data else park.get("wiredScore") or "Not verified — check wiredscore.com/map"),
+        ("SmartScore",        _ws_label(ws_data, "smartScore") if ws_data else park.get("smartScore") or "Not verified — check wiredscore.com/map"),
         ("Status",            park.get("status", "")),
         ("Website",           park.get("website", "")),
     ]
@@ -578,7 +578,7 @@ def build_connectivity_section(story, ofcom, styles):
         ["Avg monthly data usage", f"{ofcom.get('avg_data_usage_gb', 'N/A')} GB" if ofcom.get('avg_data_usage_gb') is not None else 'N/A', "Average monthly usage per connection"],
     ]
     story.append(data_table(["Metric", "Value", "Notes"], conn_rows, [65*mm, 35*mm, 70*mm]))
-    story.append(Paragraph("Data: Ofcom Connected Nations, July 2024. Local authority level — campus-specific provision may differ. On-site survey recommended.", styles["caveat"]))
+    story.append(Paragraph("Data: Ofcom Connected Nations, Jul 2024. Local authority level — asset-specific connectivity may differ. On-site survey recommended.", styles["caveat"]))
     story.append(Spacer(1, 5*mm))
 
     story.append(Paragraph("Mobile Coverage", styles["h3"]))
@@ -638,7 +638,7 @@ def build_intelligence_section(story, flags, opportunities, styles):
     story.append(Paragraph("Recommended Next Steps", styles["h2"]))
     steps = [
         ["1", "On-site connectivity audit", "Commission independent survey to validate LA-level Ofcom data with asset-specific measurements for each retail unit"],
-        ["2", "Landlord / asset manager briefing", "Present findings to the landlord or asset manager as a research-led conversation opener — not a sales pitch"],
+        ["2", "Landlord / asset manager briefing", "Present findings to the landlord or asset manager as a value-led conversation opener — not a sales pitch"],
         ["3", "Anchor tenant mapping", "Map individual anchor tenant connectivity requirements — particularly cinema, F&B, and fashion retailers with high bandwidth needs"],
         ["4", "WiredScore / SmartScore assessment", "Assess asset against WiredScore and SmartScore certification criteria — Modern Networks are Accredited Professionals"],
     ]
@@ -677,7 +677,21 @@ def build_epc_flood_section(story, epc, flood_risk, styles):
     story.append(data_table(["Metric", "Value", "Notes"], rows, [45*mm, 40*mm, 85*mm]))
     story.append(Spacer(1, 5*mm))
 
-def generate_park_pdf(park, ofcom, companies, epc=None, flood_risk=None):
+def _ws_label(ws_data, key):
+    """Format WiredScore or SmartScore entry for display."""
+    if not ws_data:
+        return "Not verified — check wiredscore.com/map"
+    d = ws_data.get(key, {})
+    status = d.get("status", "unconfirmed")
+    if status == "certified":
+        scheme = d.get("scheme", "")
+        level  = d.get("level", "")
+        return f"✓ Certified — {scheme} {level}".strip()
+    elif status == "not-certified":
+        return "✕ Not certified"
+    return "Not verified — check wiredscore.com/map"
+
+def generate_park_pdf(park, ofcom, companies, epc=None, flood_risk=None, ws_data=None):
     buf = BytesIO()
     doc = SimpleDocTemplate(buf, pagesize=A4,
                              leftMargin=15*mm, rightMargin=15*mm,
@@ -687,7 +701,7 @@ def generate_park_pdf(park, ofcom, companies, epc=None, flood_risk=None):
     story = []
 
     build_park_header(story, park, styles)
-    build_park_profile_table(story, park, styles)
+    build_park_profile_table(story, park, styles, ws_data=ws_data)
     story.append(HRFlowable(width="100%", thickness=1, color=MGREY, spaceAfter=4*mm))
     build_connectivity_section(story, ofcom, styles)
     story.append(HRFlowable(width="100%", thickness=1, color=MGREY, spaceAfter=4*mm))
@@ -721,7 +735,7 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
 
     header_data = [[
         Paragraph(report_title, styles["title"]),
-        Paragraph(f"{len(parks_list)} parks profiled  ·  {area_label}", styles["subtitle"]),
+        Paragraph(f"{len(parks_list)} assets profiled  ·  {area_label}", styles["subtitle"]),
         Paragraph(f"Generated {datetime.datetime.now().strftime('%d %B %Y')}", styles["subtitle"]),
     ]]
     t = Table([header_data], colWidths=[180*mm])
@@ -748,13 +762,13 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
         flood_high = sum(1 for p in parks_list
                          if (all_intelligence or {}).get(p["id"], {}).get("flood_risk","") == "Zone 3 (High)") if intel_run else 0
         summary_rows = [
-            ["Parks in area", str(len(parks_list)), "Average connectivity score", f"{avg_score}/100"],
+            ["Assets in area", str(len(parks_list)), "Average connectivity score", f"{avg_score}/100"],
             ["Green RAG", str(green), "Amber RAG", str(amber)],
-            ["Red RAG", str(red), "Parks with Ofcom data", str(len(with_scores))],
+            ["Red RAG", str(red), "Assets with Ofcom data", str(len(with_scores))],
         ]
         if intel_run:
             summary_rows += [
-                ["Parks with EPC data", str(epc_count), "High flood risk parks", str(flood_high)],
+                ["Assets with EPC data", str(epc_count), "High flood risk assets", str(flood_high)],
             ]
         body_s = ParagraphStyle("sb", fontSize=9, fontName="Helvetica", textColor=colors.HexColor("#2C2C2C"))
         key_s = ParagraphStyle("sk", fontSize=9, fontName="Helvetica-Bold", textColor=NAVY)
@@ -805,7 +819,7 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
             comp_rows,
             [8*mm, 48*mm, 32*mm, 17*mm, 16*mm, 13*mm, 13*mm, 12*mm, 12*mm]
         ))
-    story.append(Paragraph("Data: Ofcom Connected Nations Jul 2024 · EPC Register · Environment Agency · Local authority level · On-site survey recommended.", styles["caveat"]))
+    story.append(Paragraph("Data: Ofcom Connected Nations Jul 2024 · EPC Register · Environment Agency · Local authority level — asset-specific connectivity may differ.", styles["caveat"]))
     story.append(Spacer(1, 6*mm))
 
     all_ops = {}
@@ -816,14 +830,14 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
             all_ops[op] = all_ops.get(op, 0) + 1
 
     if all_ops:
-        story.append(Paragraph("Most Common Commercial Opportunities Across Area", styles["h2"]))
+        story.append(Paragraph("Most Common Opportunities Across Area", styles["h2"]))
         sorted_ops = sorted(all_ops.items(), key=lambda x: -x[1])
         op_rows = [[str(v), op] for op, v in sorted_ops[:10]]
         story.append(data_table(["Parks", "Opportunity"], op_rows, [20*mm, 150*mm]))
         story.append(Spacer(1, 6*mm))
 
     story.append(PageBreak())
-    story.append(Paragraph("Individual Park Summaries", styles["h2"]))
+    story.append(Paragraph("Individual Asset Summaries", styles["h2"]))
 
     for park in parks_list:
         ofcom = all_ofcom_results.get(park["id"]) or {}
@@ -980,6 +994,28 @@ if not all_parks_mode:
     subcols[2].metric("Type", park.get("type","")[:22])
     subcols[3].metric("GLA", f"{park.get('gla_sqft',0):,} sq ft" if park.get("gla_sqft") else "—")
 
+    with st.expander("🏅 WiredScore / SmartScore — optional, enter before generating report"):
+        st.caption("Check status at wiredscore.com/map — leave as 'Not verified' if unknown.")
+        ws_col1, ws_col2 = st.columns(2)
+        with ws_col1:
+            st.markdown("**WiredScore**")
+            ws_status = st.selectbox("Status", 
+                ["Not verified", "Certified", "Not certified"],
+                key="ws_status")
+            ws_scheme = ""
+            ws_level  = ""
+            if ws_status == "Certified":
+                ws_scheme = st.selectbox("Scheme", ["WiredScore", "WiredScore for Business Parks"], key="ws_scheme")
+                ws_level  = st.selectbox("Level",  ["Certified", "Silver", "Gold", "Platinum"], key="ws_level")
+        with ws_col2:
+            st.markdown("**SmartScore**")
+            ss_status = st.selectbox("Status ",
+                ["Not verified", "Certified", "Not certified"],
+                key="ss_status")
+            ss_level  = ""
+            if ss_status == "Certified":
+                ss_level = st.selectbox("Level ", ["Certified", "Silver", "Gold", "Platinum"], key="ss_level")
+
     if st.button("🔍 Generate Asset Intelligence Report", type="primary", use_container_width=True):
         with st.spinner("Pulling data for this retail asset..."):
             ofcom     = get_ofcom(park.get("local_authority",""))
@@ -1091,7 +1127,18 @@ if not all_parks_mode:
 
         st.divider()
         with st.spinner("Building PDF..."):
-            pdf_buf = generate_park_pdf(park, ofcom, companies, epc=epc, flood_risk=flood)
+            ws_data = {
+                "wiredScore": {
+                    "status":  ws_status.lower().replace(" ", "-") if ws_status != "Not verified" else "unconfirmed",
+                    "scheme":  ws_scheme,
+                    "level":   ws_level,
+                },
+                "smartScore": {
+                    "status":  ss_status.lower().replace(" ", "-") if ss_status != "Not verified" else "unconfirmed",
+                    "level":   ss_level,
+                },
+            }
+            pdf_buf = generate_park_pdf(park, ofcom, companies, epc=epc, flood_risk=flood, ws_data=ws_data)
 
         fname = f"{park['name'].replace(' ','_').replace('/','_')}_intelligence_report.pdf"
         st.download_button("📥 Download Intelligence Report (PDF)", pdf_buf, file_name=fname,
@@ -1129,7 +1176,7 @@ else:
     st.subheader(f"📊 Retail Area Report: {area_label}")
     st.markdown(f"**{len(parks_list)} assets** will be profiled across this {'region' if all_clusters_mode else 'cluster'}.")
 
-    with st.expander(f"View all {len(parks_list)} parks in scope", expanded=False):
+    with st.expander(f"View all {len(parks_list)} assets in scope", expanded=False):
         for p in parks_list:
             st.text(f"  • {p['name']} — {p.get('type','')} ({p.get('local_authority','')})")
 
@@ -1187,16 +1234,16 @@ else:
     scored_valid = [(p, o, s) for p, o, s in scored if s is not None]
 
     m1, m2, m3, m4 = st.columns(4)
-    m1.metric("Parks profiled", len(parks_list))
+    m1.metric("Assets profiled", len(parks_list))
     if scored_valid:
         avg    = round(sum(s for _,_,s in scored_valid) / len(scored_valid))
         greens = sum(1 for _,_,s in scored_valid if s >= 70)
         m2.metric("Avg connectivity score", f"{avg}/100")
-        m3.metric("Parks with Ofcom data",  len(scored_valid))
+        m3.metric("Assets with Ofcom data",  len(scored_valid))
         m4.metric("Green RAG", f"{greens}/{len(scored_valid)}")
     else:
         m2.metric("Avg connectivity score", "—")
-        m3.metric("Parks with Ofcom data",  "0")
+        m3.metric("Assets with Ofcom data",  "0")
         m4.metric("Green RAG", "—")
 
     if all_intelligence:
@@ -1216,7 +1263,7 @@ else:
         abc_vals      = [e["abc_pct"] for e in epc_data if e.get("abc_pct") is not None]
         m5, m6, m7    = st.columns(3)
         m5.metric("Active companies (total)", total_active)
-        m6.metric("High flood risk parks",    high_flood)
+        m6.metric("High flood risk assets",    high_flood)
         m7.metric("Avg EPC A–C %",
                   f"{round(sum(abc_vals)/len(abc_vals))}%" if abc_vals else "—")
 
@@ -1254,7 +1301,7 @@ else:
 
     no_data_parks = [p for p in parks_list if not all_ofcom.get(p["id"])]
     if no_data_parks:
-        with st.expander(f"{len(no_data_parks)} parks without Ofcom data match"):
+        with st.expander(f"{len(no_data_parks)} assets without Ofcom data"):
             for p in no_data_parks:
                 st.text(f"  • {p['name']} (LA: {p.get('local_authority','')})")
 
@@ -1317,4 +1364,4 @@ else:
 
     st.divider()
     st.markdown("**🔎 Drill into individual parks from this area**")
-    st.info("Use the selectors above to pick a specific asset and generate a detailed individual report.")
+    st.info("Use the selectors above to pick a specific asset and generate a detailed report.")
