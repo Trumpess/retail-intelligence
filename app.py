@@ -531,7 +531,7 @@ def build_park_header(story, park, styles):
     story.append(Spacer(1, 6*mm))
 
 def build_park_profile_table(story, park, styles, ws_data=None):
-    story.append(Paragraph("Park Profile", styles["h2"]))
+    story.append(Paragraph("Asset Profile", styles["h2"]))
     fields = [
         ("Cluster / Area",    park.get("_cluster", "")),
         ("Asset Type",        park.get("type", "")),
@@ -790,7 +790,7 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
         story.append(tbl)
     story.append(Spacer(1, 6*mm))
 
-    story.append(Paragraph("Connectivity Comparison — All Parks (Ranked)", styles["h2"]))
+    story.append(Paragraph("Connectivity Comparison — All Assets (Ranked)", styles["h2"]))
     ranked = sorted(scored, key=lambda x: (x[2] is None, -(x[2] or 0)))
 
     comp_rows = []
@@ -838,7 +838,7 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
         story.append(Paragraph("Most Common Opportunities Across Area", styles["h2"]))
         sorted_ops = sorted(all_ops.items(), key=lambda x: -x[1])
         op_rows = [[str(v), op] for op, v in sorted_ops[:10]]
-        story.append(data_table(["Parks", "Opportunity"], op_rows, [20*mm, 150*mm]))
+        story.append(data_table(["Assets", "Opportunity"], op_rows, [20*mm, 150*mm]))
         story.append(Spacer(1, 6*mm))
 
     story.append(PageBreak())
@@ -1015,7 +1015,7 @@ if not all_parks_mode:
             ws_scheme = ""
             ws_level  = ""
             if ws_status == "Certified":
-                ws_scheme = st.selectbox("Scheme", ["WiredScore", "WiredScore for Business Parks"], key="ws_scheme")
+                ws_scheme = st.selectbox("Scheme", ["WiredScore", "WiredScore for Retail Parks"], key="ws_scheme")
                 ws_level  = st.selectbox("Level",  ["Certified", "Silver", "Gold", "Platinum"], key="ws_level")
         with ws_col2:
             st.markdown("**SmartScore**")
@@ -1192,7 +1192,6 @@ else:
 
     with st.expander("🏅 WiredScore / SmartScore — optional, enter known certification status before generating"):
         st.caption("Enter known statuses before generating. Leave blank for assets not yet verified. Check wiredscore.com/map")
-        area_ws = {}
         for p in parks_list:
             pid  = p["id"]
             pname= p["name"]
@@ -1206,15 +1205,26 @@ else:
                                 key=f"ass_{pid}", label_visibility="collapsed")
             ss_l = c5.selectbox("SS Level", ["—", "Certified", "Silver", "Gold", "Platinum"],
                                 key=f"assl_{pid}", label_visibility="collapsed") if ss_s == "Certified" else "—"
-            area_ws[pid] = {
+
+    def _snapshot_ws(parks_list):
+        """Read current selectbox values and save to session_state."""
+        snap = {}
+        for p in parks_list:
+            pid  = p["id"]
+            ws_s = st.session_state.get(f"aws_{pid}", "—")
+            ws_l = st.session_state.get(f"awsl_{pid}", "—")
+            ss_s = st.session_state.get(f"ass_{pid}", "—")
+            ss_l = st.session_state.get(f"assl_{pid}", "—")
+            snap[pid] = {
                 "wiredScore": {"status": ws_s.lower().replace(" ", "-") if ws_s != "—" else "unconfirmed",
-                               "level": ws_l if ws_l != "—" else ""},
+                               "level":  ws_l if ws_l not in ("—","") else ""},
                 "smartScore": {"status": ss_s.lower().replace(" ", "-") if ss_s != "—" else "unconfirmed",
-                               "level": ss_l if ss_l != "—" else ""},
+                               "level":  ss_l if ss_l not in ("—","") else ""},
             }
-        st.session_state["area_ws"] = area_ws
+        st.session_state["area_ws"] = snap
 
     if st.button(f"🔍 Generate {area_label} Retail Intelligence Report", type="primary", use_container_width=True):
+        _snapshot_ws(parks_list)
         with st.spinner(f"Pulling Ofcom data for {len(parks_list)} assets..."):
             all_ofcom = {}
             for park in parks_list:
@@ -1228,8 +1238,6 @@ else:
         st.session_state["area_parks"]       = parks_list
         st.session_state["area_label"]       = area_label
         st.session_state["report_title"]     = report_title
-        if "area_ws" not in st.session_state:
-            st.session_state["area_ws"]      = {}
 
     intel_label = "🔬 Run Full Intelligence (EPC · Companies House · Flood Risk)"
     if intelligence_available:
@@ -1246,6 +1254,7 @@ else:
             all_ofcom = {pid: v["ofcom"] for pid, v in all_intelligence.items()}
             st.session_state["area_ofcom"]        = all_ofcom
             st.session_state["area_intelligence"]  = all_intelligence
+            _snapshot_ws(parks_list)
             st.session_state["area_parks"]         = parks_list
             st.session_state["area_label"]         = area_label
             st.session_state["report_title"]       = report_title
@@ -1353,7 +1362,7 @@ else:
     if all_ops:
         st.markdown("**💼 Top Opportunities Across Area**")
         for op, count in sorted(all_ops.items(), key=lambda x: -x[1])[:6]:
-            st.info(f"**{count} parks** — {op}")
+            st.info(f"**{count} assets** — {op}")
 
     # ── Full intelligence: EPC & flood summary table ───────────────────────────
     if all_intelligence:
@@ -1400,5 +1409,5 @@ else:
         st.caption("ℹ️ Run Full Intelligence above to add EPC, Companies House, and flood risk data to the export.")
 
     st.divider()
-    st.markdown("**🔎 Drill into individual parks from this area**")
-    st.info("Use the selectors above to pick a specific asset and generate a detailed report.")
+    st.markdown("**🔎 Drill into individual assets from this area**")
+    st.info("Use the selectors above to pick an individual asset for a detailed report.")
