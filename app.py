@@ -357,13 +357,18 @@ def generate_opportunities(park, ofcom, companies):
 
     # Scale-based
     if gla >= 1000000:
-        ops.append(f"Campus-scale managed network — {gla:,} sq ft estate requires enterprise-grade multi-tenant infrastructure with centralised management")
+        ops.append(f"Estate-wide managed network — {gla:,} sq ft asset requires enterprise-grade multi-tenant infrastructure with centralised management")
     elif gla >= 500000:
         ops.append(f"Multi-tenant managed connectivity — {gla:,} sq ft with multiple anchor tenants benefits from single managed services provider")
 
     # Asset type specific
     if "regional" in asset_type:
-        ops.append("WiredScore / SmartScore certification — regional centres increasingly expected to hold certification for premium tenant attraction")
+        ws = park.get("wiredScore","") or ""
+        ss = park.get("smartScore","") or ""
+        if not ws or ws.lower() in ("","not confirmed","not verified"):
+            ops.append("WiredScore certification — major retail assets increasingly expected to hold certification; Modern Networks are Accredited Professionals")
+        if not ss or ss.lower() in ("","not confirmed","not verified"):
+            ops.append("SmartScore certification — smart building accreditation differentiates repositioning assets for premium occupiers")
     if "outlet" in asset_type:
         ops.append("Premium brand connectivity — outlet centres require reliable high-bandwidth connections for brand experience, analytics, and stock management")
     if "retail park" in asset_type:
@@ -620,7 +625,7 @@ def build_intelligence_section(story, flags, opportunities, styles):
     story.append(PageBreak())
     story.append(Paragraph("Intelligence Flags", styles["h2"]))
     if not flags:
-        story.append(Paragraph("No significant intelligence flags identified for this park location.", styles["body"]))
+        story.append(Paragraph("No significant intelligence flags identified for this retail asset.", styles["body"]))
     for flag_title, flag_detail in flags:
         story.append(Paragraph(flag_title, styles["flag"]))
         story.append(Paragraph(flag_detail, styles["flagbody"]))
@@ -724,7 +729,7 @@ def generate_park_pdf(park, ofcom, companies, epc=None, flood_risk=None, ws_data
     return buf
 
 # ─── PDF GENERATION: AREA / CLUSTER / REGION REPORT ──────────────────────────
-def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, all_intelligence=None):
+def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, all_intelligence=None, area_ws=None):
     buf = BytesIO()
     doc = SimpleDocTemplate(buf, pagesize=A4,
                              leftMargin=15*mm, rightMargin=15*mm,
@@ -862,11 +867,16 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
         epc_str = p_intel.get("epc", {}).get("most_common", "—") if p_intel else "—"
         flood_s = p_intel.get("flood_risk", "—") if p_intel else "—"
         gla_str = f"{park.get('gla_sqft',0):,} sq ft" if park.get("gla_sqft") else "—"
+        pid     = park.get("id","")
+        pws     = (area_ws or {}).get(pid, {})
+        ws_disp = _ws_label(pws, "wiredScore") if pws else "Not verified"
+        ss_disp = _ws_label(pws, "smartScore") if pws else "Not verified"
         mini_rows = [
             ["Connectivity Score", cs_str, "Mobile Score", ms_str],
             ["Full Fibre %", f"{ofcom.get('full_fibre_pct',0):.0f}%" if ofcom else "—",
              "5G Outdoor %", f"{ofcom.get('outdoor_5g_pct',0):.0f}%" if ofcom else "—"],
             ["EPC Rating", epc_str, "Flood Risk", flood_s],
+            ["WiredScore", ws_disp[:35], "SmartScore", ss_disp[:35]],
             ["Asset Type", park.get("type","")[:40], "GLA", gla_str],
             ["Landlord", park.get("landlord","")[:40], "Status", park.get("status","")],
         ]
@@ -1180,6 +1190,30 @@ else:
         for p in parks_list:
             st.text(f"  • {p['name']} — {p.get('type','')} ({p.get('local_authority','')})")
 
+    with st.expander("🏅 WiredScore / SmartScore — optional, enter known certification status before generating"):
+        st.caption("Enter known statuses before generating. Leave blank for assets not yet verified. Check wiredscore.com/map")
+        area_ws = {}
+        for p in parks_list:
+            pid  = p["id"]
+            pname= p["name"]
+            c1, c2, c3, c4, c5 = st.columns([3, 2, 2, 2, 2])
+            c1.markdown(f"**{pname[:30]}**")
+            ws_s = c2.selectbox("WiredScore", ["—", "Certified", "Not certified"],
+                                key=f"aws_{pid}", label_visibility="collapsed")
+            ws_l = c3.selectbox("WS Level", ["—", "Certified", "Silver", "Gold", "Platinum"],
+                                key=f"awsl_{pid}", label_visibility="collapsed") if ws_s == "Certified" else "—"
+            ss_s = c4.selectbox("SmartScore", ["—", "Certified", "Not certified"],
+                                key=f"ass_{pid}", label_visibility="collapsed")
+            ss_l = c5.selectbox("SS Level", ["—", "Certified", "Silver", "Gold", "Platinum"],
+                                key=f"assl_{pid}", label_visibility="collapsed") if ss_s == "Certified" else "—"
+            area_ws[pid] = {
+                "wiredScore": {"status": ws_s.lower().replace(" ", "-") if ws_s != "—" else "unconfirmed",
+                               "level": ws_l if ws_l != "—" else ""},
+                "smartScore": {"status": ss_s.lower().replace(" ", "-") if ss_s != "—" else "unconfirmed",
+                               "level": ss_l if ss_l != "—" else ""},
+            }
+        st.session_state["area_ws"] = area_ws
+
     if st.button(f"🔍 Generate {area_label} Retail Intelligence Report", type="primary", use_container_width=True):
         with st.spinner(f"Pulling Ofcom data for {len(parks_list)} assets..."):
             all_ofcom = {}
@@ -1190,10 +1224,12 @@ else:
                 else:
                     all_ofcom[park["id"]] = {}
         st.session_state["area_ofcom"]       = all_ofcom
-        st.session_state["area_intelligence"]= None   # clear any previous full run
+        st.session_state["area_intelligence"]= None
         st.session_state["area_parks"]       = parks_list
         st.session_state["area_label"]       = area_label
         st.session_state["report_title"]     = report_title
+        if "area_ws" not in st.session_state:
+            st.session_state["area_ws"]      = {}
 
     intel_label = "🔬 Run Full Intelligence (EPC · Companies House · Flood Risk)"
     if intelligence_available:
@@ -1225,6 +1261,7 @@ else:
     parks_list      = st.session_state["area_parks"]
     area_label      = st.session_state["area_label"]
     report_title    = st.session_state["report_title"]
+    area_ws         = st.session_state.get("area_ws", {})
 
     if all_intelligence:
         st.success(f"✅ Full intelligence run complete — {len(all_intelligence)} assets enriched with EPC, Companies House, and flood risk data.")
@@ -1336,7 +1373,7 @@ else:
     st.divider()
 
     with st.spinner("Building area report PDF..."):
-        pdf_buf = generate_area_pdf(area_label, parks_list, all_ofcom, report_title, all_intelligence=all_intelligence)
+        pdf_buf = generate_area_pdf(area_label, parks_list, all_ofcom, report_title, all_intelligence=all_intelligence, area_ws=area_ws)
 
     safe_name = area_label.replace(" ","_").replace("&","and").replace("–","_").replace("/","_")
     fname     = f"{safe_name}_area_report.pdf"
