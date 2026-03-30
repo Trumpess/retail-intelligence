@@ -72,13 +72,14 @@ def build_export_data(park, ofcom, companies, report_type, area_label="",
         "intelligence_run":    all_intelligence is not None or epc is not None,
     }
     if report_type == "park" and park:
-        export["parks"] = [{
+        export["assets"] = [{
             "name":       park.get("name", ""),
             "postcode":   park.get("postcode", ""),
-            "location":   park.get("location", ""),
-            "sector":     park.get("sector", ""),
-            "tenants":    park.get("tenants", ""),
-            "operator":   park.get("operator", ""),
+            "type":       park.get("type", ""),
+            "gla_sqft":   park.get("gla_sqft", 0),
+            "landlord":   park.get("landlord", ""),
+            "anchor_tenants": park.get("anchor_tenants", []),
+            "repositioning":  park.get("repositioning", False),
             "status":     park.get("status", ""),
             "notes":      park.get("notes", ""),
             "website":    park.get("website", ""),
@@ -88,18 +89,19 @@ def build_export_data(park, ofcom, companies, report_type, area_label="",
             "flood_risk": flood_risk or "Unknown",
         }]
     elif report_type == "area" and parks_list:
-        export["parks"] = []
+        export["assets"] = []
         for p in parks_list:
-            pid = p.get("id", p.get("postcode", ""))
+            pid   = p.get("id", p.get("postcode", ""))
             intel = (all_intelligence or {}).get(pid, {})
             ofc   = intel.get("ofcom") or (all_ofcom or {}).get(pid, {})
-            export["parks"].append({
+            export["assets"].append({
                 "name":       p.get("name", ""),
                 "postcode":   p.get("postcode", ""),
-                "location":   p.get("location", ""),
-                "sector":     p.get("sector", ""),
-                "tenants":    p.get("tenants", ""),
-                "operator":   p.get("operator", ""),
+                "type":       p.get("type", ""),
+                "gla_sqft":   p.get("gla_sqft", 0),
+                "landlord":   p.get("landlord", ""),
+                "anchor_tenants": p.get("anchor_tenants", []),
+                "repositioning":  p.get("repositioning", False),
                 "status":     p.get("status", ""),
                 "notes":      p.get("notes", ""),
                 "website":    p.get("website", ""),
@@ -305,14 +307,14 @@ def score_mobile(ofcom):
 
 def classify_companies(companies):
     sector_map = {
-        "Research & Development": [72],
-        "Software & IT": [62, 63],
-        "Pharma & Biotech": [21, 8630],
-        "Medical Devices": [2660, 8600],
-        "Engineering": [25, 28, 33],
-        "Energy Tech": [35, 3511, 3512],
-        "Telecoms": [61],
-        "Manufacturing": [24, 26, 27, 29, 30],
+        "Retail": list(range(4710, 4800)),
+        "Food & Beverage": list(range(5610, 5640)),
+        "Finance & Insurance": list(range(6400, 6700)),
+        "Professional Services": list(range(6900, 7600)),
+        "Technology & IT": list(range(5800, 6400)),
+        "Property & Real Estate": list(range(6800, 6900)),
+        "Leisure & Entertainment": list(range(9000, 9330)),
+        "Health & Beauty": [4775, 8600, 8610, 8620],
     }
     counts = {k: 0 for k in sector_map}
     for co in companies:
@@ -328,7 +330,7 @@ def classify_companies(companies):
                 pass
     return {k: v for k, v in counts.items() if v > 0}
 
-def generate_opportunities(park, ofcom, companies):
+def generate_opportunities(park, ofcom, companies, ws_data=None):
     """Generate retail-specific commercial opportunities."""
     ops = []
     ff    = ofcom.get("full_fibre_pct", 0) or 0
@@ -362,12 +364,17 @@ def generate_opportunities(park, ofcom, companies):
         ops.append(f"Multi-tenant managed connectivity — {gla:,} sq ft with multiple anchor tenants benefits from single managed services provider")
 
     # Asset type specific
-    if "regional" in asset_type:
-        ws = park.get("wiredScore","") or ""
-        ss = park.get("smartScore","") or ""
-        if not ws or ws.lower() in ("","not confirmed","not verified"):
+    if "regional" in asset_type or "sub-regional" in asset_type or gla >= 300000:
+        # Check WiredScore status from ws_data (user input) or fall back to park data
+        if ws_data:
+            ws_status = (ws_data.get("wiredScore") or {}).get("status","unconfirmed")
+            ss_status = (ws_data.get("smartScore") or {}).get("status","unconfirmed")
+        else:
+            ws_status = "unconfirmed"
+            ss_status = "unconfirmed"
+        if ws_status not in ("certified",):
             ops.append("WiredScore certification — major retail assets increasingly expected to hold certification; Modern Networks are Accredited Professionals")
-        if not ss or ss.lower() in ("","not confirmed","not verified"):
+        if ss_status not in ("certified",):
             ops.append("SmartScore certification — smart building accreditation differentiates repositioning assets for premium occupiers")
     if "outlet" in asset_type:
         ops.append("Premium brand connectivity — outlet centres require reliable high-bandwidth connections for brand experience, analytics, and stock management")
@@ -814,13 +821,13 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
 
     if all_intelligence:
         story.append(data_table(
-            ["#", "Park", "Local Authority", "Score", "RAG", "FF%", "Gig%", "4G%", "5G%", "EPC", "Flood"],
+            ["#", "Asset", "Local Authority", "Score", "RAG", "FF%", "Gig%", "4G%", "5G%", "EPC", "Flood"],
             comp_rows,
             [7*mm, 40*mm, 28*mm, 15*mm, 14*mm, 11*mm, 11*mm, 11*mm, 11*mm, 11*mm, 11*mm]
         ))
     else:
         story.append(data_table(
-            ["#", "Park", "Local Authority", "Score", "RAG", "FF%", "Gig%", "4G%", "5G%"],
+            ["#", "Asset", "Local Authority", "Score", "RAG", "FF%", "Gig%", "4G%", "5G%"],
             comp_rows,
             [8*mm, 48*mm, 32*mm, 17*mm, 16*mm, 13*mm, 13*mm, 12*mm, 12*mm]
         ))
@@ -829,8 +836,10 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
 
     all_ops = {}
     for park in parks_list:
-        ofcom = all_ofcom_results.get(park["id"]) or {}
-        park_ops = generate_opportunities(park, ofcom, [])
+        ofcom    = all_ofcom_results.get(park["id"]) or {}
+        pid      = park.get("id","")
+        pws      = (area_ws or {}).get(pid, {})
+        park_ops = generate_opportunities(park, ofcom, [], ws_data=pws if pws else None)
         for op in park_ops:
             all_ops[op] = all_ops.get(op, 0) + 1
 
@@ -845,15 +854,17 @@ def generate_area_pdf(area_label, parks_list, all_ofcom_results, report_title, a
     story.append(Paragraph("Individual Asset Summaries", styles["h2"]))
 
     for park in parks_list:
-        ofcom = all_ofcom_results.get(park["id"]) or {}
+        ofcom    = all_ofcom_results.get(park["id"]) or {}
+        pid_a    = park.get("id","")
+        pws_a    = (area_ws or {}).get(pid_a, {})
         conn_score, conn_rag = score_connectivity(ofcom)
         mob_score = score_mobile(ofcom)
         flags = generate_flags(park, ofcom) if ofcom else []
-        ops = generate_opportunities(park, ofcom, [])
+        ops   = generate_opportunities(park, ofcom, [], ws_data=pws_a if pws_a else None)
 
         ps = ParagraphStyle("pname", fontSize=11, fontName="Helvetica-Bold", textColor=WHITE)
         ps2 = ParagraphStyle("ploc", fontSize=9, fontName="Helvetica", textColor=colors.HexColor("#BDD7EE"))
-        park_hdr = Table([[Paragraph(park["name"], ps)], [Paragraph(f"{park.get('location','')} · {park.get('sector','')[:60]}", ps2)]],
+        park_hdr = Table([[Paragraph(park["name"], ps)], [Paragraph(f"{park.get('type','')} · {park.get('landlord','')[:50]}", ps2)]],
                          colWidths=[170*mm])
         park_hdr.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), TEAL), ("PADDING", (0, 0), (-1, -1), 7)]))
         story.append(KeepTogether([
@@ -987,7 +998,7 @@ if not all_parks_mode:
     selected_park = next(p for p in parks_in_scope if p["name"] == selected_park_name)
     region_name = selected_region_name
     cluster_name = selected_cluster_name if not all_clusters_mode else next(
-        c["name"] for c in selected_region["clusters"] if any(p["id"] == selected_park["id"] for p in c["parks"])
+        c["name"] for c in selected_region["clusters"] if any(p["id"] == selected_park["id"] for p in c["assets"])
     )
     selected_park["_region"] = region_name
     selected_park["_cluster"] = cluster_name
@@ -1036,7 +1047,13 @@ if not all_parks_mode:
             conn_score, conn_rag = score_connectivity(ofcom)
             mob_score = score_mobile(ofcom)
             flags     = generate_flags(park, ofcom) if ofcom else []
-            ops       = generate_opportunities(park, ofcom or {}, companies)
+            ws_data_single = {
+                "wiredScore": {"status": ws_status.lower().replace(" ","-") if ws_status != "Not verified" else "unconfirmed",
+                               "scheme": ws_scheme, "level": ws_level},
+                "smartScore":  {"status": ss_status.lower().replace(" ","-") if ss_status != "Not verified" else "unconfirmed",
+                               "level": ss_level},
+            }
+            ops       = generate_opportunities(park, ofcom or {}, companies, ws_data=ws_data_single)
 
         m1, m2, m3, m4 = st.columns(4)
         rag_icon = {"Green": "🟢", "Amber": "🟡", "Red": "🔴"}.get(conn_rag, "⚪")
@@ -1357,7 +1374,9 @@ else:
     for park in parks_list:
         ofcom    = all_ofcom.get(park["id"]) or {}
         companies= (all_intelligence or {}).get(park["id"], {}).get("companies", [])
-        for op in generate_opportunities(park, ofcom, companies):
+        pid_s    = park.get("id","")
+        pws_s    = area_ws.get(pid_s, {})
+        for op in generate_opportunities(park, ofcom, companies, ws_data=pws_s if pws_s else None):
             all_ops[op] = all_ops.get(op, 0) + 1
     if all_ops:
         st.markdown("**💼 Top Opportunities Across Area**")
@@ -1404,9 +1423,9 @@ else:
         use_container_width=True,
     )
     if all_intelligence:
-        st.caption("✅ Export includes EPC, Companies House, and flood risk data for every park.")
+        st.caption("✅ Export includes EPC, Companies House, and flood risk data for every asset.")
     else:
-        st.caption("ℹ️ Run Full Intelligence above to add EPC, Companies House, and flood risk data to the export.")
+        st.caption("ℹ️ Run Full Intelligence above to enrich the export with EPC, Companies House, and flood risk data.")
 
     st.divider()
     st.markdown("**🔎 Drill into individual assets from this area**")
