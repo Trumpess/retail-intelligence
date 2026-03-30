@@ -1223,25 +1223,21 @@ else:
             ss_l = c5.selectbox("SS Level", ["—", "Certified", "Silver", "Gold", "Platinum"],
                                 key=f"assl_{pid}", label_visibility="collapsed") if ss_s == "Certified" else "—"
 
-    def _snapshot_ws(parks_list):
-        """Read current selectbox values and save to session_state."""
-        snap = {}
-        for p in parks_list:
-            pid  = p["id"]
-            ws_s = st.session_state.get(f"aws_{pid}", "—")
-            ws_l = st.session_state.get(f"awsl_{pid}", "—")
-            ss_s = st.session_state.get(f"ass_{pid}", "—")
-            ss_l = st.session_state.get(f"assl_{pid}", "—")
-            snap[pid] = {
-                "wiredScore": {"status": ws_s.lower().replace(" ", "-") if ws_s != "—" else "unconfirmed",
-                               "level":  ws_l if ws_l not in ("—","") else ""},
-                "smartScore": {"status": ss_s.lower().replace(" ", "-") if ss_s != "—" else "unconfirmed",
-                               "level":  ss_l if ss_l not in ("—","") else ""},
-            }
-        st.session_state["area_ws"] = snap
+    # Show a quick summary of what WiredScore/SmartScore has been entered
+    ws_summary_parts = []
+    for p in parks_list:
+        pid  = p["id"]
+        ws_s = st.session_state.get(f"aws_{pid}", "—")
+        ss_s = st.session_state.get(f"ass_{pid}", "—")
+        if ws_s != "—" or ss_s != "—":
+            ws_label = f"WS:{ws_s}" if ws_s != "—" else ""
+            ss_label = f"SS:{ss_s}" if ss_s != "—" else ""
+            parts = " · ".join(x for x in [ws_label, ss_label] if x)
+            ws_summary_parts.append(f"{p['name'][:25]}: {parts}")
+    if ws_summary_parts:
+        st.caption("Certification entries recorded: " + "  |  ".join(ws_summary_parts))
 
     if st.button(f"🔍 Generate {area_label} Retail Intelligence Report", type="primary", use_container_width=True):
-        _snapshot_ws(parks_list)
         with st.spinner(f"Pulling Ofcom data for {len(parks_list)} assets..."):
             all_ofcom = {}
             for park in parks_list:
@@ -1271,7 +1267,6 @@ else:
             all_ofcom = {pid: v["ofcom"] for pid, v in all_intelligence.items()}
             st.session_state["area_ofcom"]        = all_ofcom
             st.session_state["area_intelligence"]  = all_intelligence
-            _snapshot_ws(parks_list)
             st.session_state["area_parks"]         = parks_list
             st.session_state["area_label"]         = area_label
             st.session_state["report_title"]       = report_title
@@ -1287,7 +1282,27 @@ else:
     parks_list      = st.session_state["area_parks"]
     area_label      = st.session_state["area_label"]
     report_title    = st.session_state["report_title"]
-    area_ws         = st.session_state.get("area_ws", {})
+    # Build area_ws directly from widget session_state — always current, no snapshot needed
+    def _build_area_ws(pl):
+        d = {}
+        for p in pl:
+            pid  = p["id"]
+            ws_s = st.session_state.get(f"aws_{pid}", "—")
+            ws_l = st.session_state.get(f"awsl_{pid}", "—")
+            ss_s = st.session_state.get(f"ass_{pid}", "—")
+            ss_l = st.session_state.get(f"assl_{pid}", "—")
+            d[pid] = {
+                "wiredScore": {
+                    "status": ws_s.lower().replace(" ", "-") if ws_s not in ("—", "") else "unconfirmed",
+                    "level":  ws_l if ws_l not in ("—", "") else "",
+                },
+                "smartScore": {
+                    "status": ss_s.lower().replace(" ", "-") if ss_s not in ("—", "") else "unconfirmed",
+                    "level":  ss_l if ss_l not in ("—", "") else "",
+                },
+            }
+        return d
+    area_ws = _build_area_ws(st.session_state.get("area_parks", parks_list))
 
     if all_intelligence:
         st.success(f"✅ Full intelligence run complete — {len(all_intelligence)} assets enriched with EPC, Companies House, and flood risk data.")
