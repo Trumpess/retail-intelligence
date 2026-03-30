@@ -1304,6 +1304,13 @@ else:
         return d
     area_ws = _build_area_ws(st.session_state.get("area_parks", parks_list))
 
+    # TEMP DEBUG — remove after testing
+    with st.expander("🔧 Debug: WiredScore data captured"):
+        for pid, v in area_ws.items():
+            ws = v.get("wiredScore",{}).get("status","?")
+            ss = v.get("smartScore",{}).get("status","?")
+            st.text(f"ID:{pid}  WS:{ws}  SS:{ss}")
+
     if all_intelligence:
         st.success(f"✅ Full intelligence run complete — {len(all_intelligence)} assets enriched with EPC, Companies House, and flood risk data.")
 
