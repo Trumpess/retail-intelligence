@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03",
-  "description": "Major UK retail assets — shopping centres, retail parks, and outlet centres across England, Scotland and Wales. Focuses on assets of strategic relevance to Modern Networks managed IT and connectivity services.",
+  "last_updated": "2026-04",
+  "description": "Major UK retail assets \u2014 shopping centres, retail parks, and outlet centres across England, Scotland and Wales. Includes current ownership, managing agents, and investment/repositioning activity as at April 2026. Focuses on assets of strategic relevance to Modern Networks managed IT and connectivity services.",
   "regions": [
     {
       "name": "London",
@@ -9,22 +9,249 @@
         {
           "name": "Central London",
           "assets": [
-            {"id":"lon-c-001","name":"Westfield London","postcode":"W12 7GF","type":"Regional Shopping Centre","gla_sqft":2600000,"landlord":"Unibail-Rodamco-Westfield","anchor_tenants":["John Lewis","Marks & Spencer","Primark","Zara"],"local_authority":"London Borough of Hammersmith and Fulham","wiredScore":"","smartScore":"","repositioning":false,"notes":"One of Europe's largest urban shopping centres. Major leisure and food offer. Over 300 stores.","website":"westfield.com/london","status":"Open"},
-            {"id":"lon-c-002","name":"Westfield Stratford City","postcode":"E20 1EJ","type":"Regional Shopping Centre","gla_sqft":1900000,"landlord":"Unibail-Rodamco-Westfield","anchor_tenants":["John Lewis","Marks & Spencer","Waitrose","Vue Cinema"],"local_authority":"London Borough of Newham","wiredScore":"","smartScore":"","repositioning":false,"notes":"Adjacent to Olympic Park. Strong leisure and food offer. Major transport interchange.","website":"westfield.com/stratfordcity","status":"Open"},
-            {"id":"lon-c-003","name":"Brent Cross Shopping Centre","postcode":"NW4 3FP","type":"Regional Shopping Centre","gla_sqft":800000,"landlord":"Hammerson / AEW","anchor_tenants":["John Lewis","Marks & Spencer","Fenwick"],"local_authority":"London Borough of Barnet","wiredScore":"","smartScore":"","repositioning":true,"notes":"Significant expansion and redevelopment planned. One of the UK's first purpose-built shopping centres (1976).","website":"brentcross.co.uk","status":"Open"},
-            {"id":"lon-c-004","name":"One New Change","postcode":"EC4M 9AF","type":"Mixed Use Retail","gla_sqft":330000,"landlord":"Norges Bank Investment Management","anchor_tenants":["Marks & Spencer","Boots"],"local_authority":"City of London","wiredScore":"","smartScore":"","repositioning":false,"notes":"Premium city centre retail adjacent to St Paul's Cathedral. Strong office worker catchment.","website":"onenewchange.com","status":"Open"},
-            {"id":"lon-c-005","name":"Canary Wharf Shopping","postcode":"E14 5AB","type":"Mixed Use Retail","gla_sqft":800000,"landlord":"Canary Wharf Group","anchor_tenants":["Waitrose","Boots","Marks & Spencer"],"local_authority":"London Borough of Tower Hamlets","wiredScore":"","smartScore":"","repositioning":false,"notes":"Integrated retail within major office and residential district. Three malls across the estate.","website":"canarywharf.com/shops","status":"Open"}
+            {
+              "id": "lon-c-001",
+              "name": "Westfield London",
+              "postcode": "W12 7GF",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 2600000,
+              "landlord": "Unibail-Rodamco-Westfield (URW)",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "Zara"
+              ],
+              "local_authority": "London Borough of Hammersmith and Fulham",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "One of Europe's largest urban shopping centres. Major leisure and food offer. Over 300 stores. URW-owned flagship undergoing continuous F&B and leisure repositioning.",
+              "website": "westfield.com/london",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "URW owns 50%, ABP Pension Fund 25%, CPP Investments 25%. URW invested over \u00a31.75bn total. Major repositioning ongoing with continued F&B and leisure expansion."
+            },
+            {
+              "id": "lon-c-002",
+              "name": "Westfield Stratford City",
+              "postcode": "E20 1EJ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1900000,
+              "landlord": "Unibail-Rodamco-Westfield (URW)",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Waitrose",
+                "Vue Cinema"
+              ],
+              "local_authority": "London Borough of Newham",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Adjacent to Olympic Park. Strong leisure and food offer. Major transport interchange. URW flagship undergoing F&B and leisure expansion.",
+              "website": "westfield.com/stratfordcity",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "URW majority owner. Ongoing expansion of leisure and F&B offer. Adjacent to Queen Elizabeth Olympic Park."
+            },
+            {
+              "id": "lon-c-003",
+              "name": "Brent Cross Shopping Centre",
+              "postcode": "NW4 3FP",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 800000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Fenwick"
+              ],
+              "local_authority": "London Borough of Barnet",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Hammerson fully owns since 2025. Major repositioning underway \u2014 new District street food hall, active leasing at 98%+ occupancy. Long-term Southern Lands development from 2027.",
+              "website": "brentcross.co.uk",
+              "status": "Open",
+              "managing_agent": "Hammerson",
+              "investment_activity": "Hammerson acquired Aberdeen's remaining stake in 2025 for \u00a3207m \u2014 now fully owns asset. Active repositioning: new District street food hall opened 2025, major leasing programme underway. Brent Cross Southern Lands development opportunity worth c.\u00a34.8bn GDV in longer term."
+            },
+            {
+              "id": "lon-c-004",
+              "name": "One New Change",
+              "postcode": "EC4M 9AF",
+              "type": "Mixed Use Retail",
+              "gla_sqft": 330000,
+              "landlord": "Norges Bank Investment Management",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Boots"
+              ],
+              "local_authority": "City of London",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Premium city centre retail adjacent to St Paul's Cathedral. Strong office worker catchment.",
+              "website": "onenewchange.com",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "Long-term institutional ownership. Premium city centre retail."
+            },
+            {
+              "id": "lon-c-005",
+              "name": "Canary Wharf Shopping",
+              "postcode": "E14 5AB",
+              "type": "Mixed Use Retail",
+              "gla_sqft": 800000,
+              "landlord": "Canary Wharf Group",
+              "anchor_tenants": [
+                "Waitrose",
+                "Boots",
+                "Marks & Spencer"
+              ],
+              "local_authority": "London Borough of Tower Hamlets",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Integrated retail within major office and residential district. Three malls across the estate.",
+              "website": "canarywharf.com/shops",
+              "status": "Open",
+              "managing_agent": "Canary Wharf Group",
+              "investment_activity": "Integrated within Canary Wharf estate. Ongoing mixed-use development across the wider estate including residential expansion."
+            }
           ]
         },
         {
           "name": "Greater London",
           "assets": [
-            {"id":"lon-g-001","name":"Bluewater","postcode":"DA9 9ST","type":"Regional Shopping Centre","gla_sqft":1600000,"landlord":"Landsec","anchor_tenants":["John Lewis","Marks & Spencer","Primark","Next"],"local_authority":"Dartford","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major out-of-town destination. Strong leisure offer including cinema and restaurants. 330 stores.","website":"bluewater.co.uk","status":"Open"},
-            {"id":"lon-g-002","name":"Lakeside","postcode":"RM20 2ZP","type":"Regional Shopping Centre","gla_sqft":1300000,"landlord":"Unibail-Rodamco-Westfield","anchor_tenants":["Marks & Spencer","Next","Primark","H&M"],"local_authority":"Thurrock","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major out-of-town centre. Over 250 stores with extensive leisure provision.","website":"lakeside.co.uk","status":"Open"},
-            {"id":"lon-g-003","name":"atria Watford","postcode":"WD17 2TQ","type":"Regional Shopping Centre","gla_sqft":1100000,"landlord":"Cardinal Capital Group","anchor_tenants":["John Lewis","Marks & Spencer","Primark"],"local_authority":"Watford","wiredScore":"","smartScore":"","repositioning":false,"notes":"Formerly intu Watford. Major town centre scheme. Strong transport links.","website":"atriawatford.co.uk","status":"Open"},
-            {"id":"lon-g-004","name":"The Glades","postcode":"BR1 1DD","type":"Sub-Regional Shopping Centre","gla_sqft":600000,"landlord":"Sovereign Centros","anchor_tenants":["Marks & Spencer","Next","H&M"],"local_authority":"London Borough of Bromley","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major south London shopping destination. 150 stores.","website":"theglades.co.uk","status":"Open"},
-            {"id":"lon-g-005","name":"The Bentall Centre","postcode":"KT1 1TR","type":"Sub-Regional Shopping Centre","gla_sqft":430000,"landlord":"Related Argent","anchor_tenants":["John Lewis"],"local_authority":"Royal Borough of Kingston upon Thames","wiredScore":"","smartScore":"","repositioning":false,"notes":"Premium shopping in Kingston town centre. John Lewis anchor.","website":"bentallcentre.co.uk","status":"Open"},
-            {"id":"lon-g-006","name":"London Designer Outlet","postcode":"HA9 0FD","type":"Outlet Centre","gla_sqft":350000,"landlord":"Realm","anchor_tenants":["Nike","Adidas","Gap","Under Armour"],"local_authority":"London Borough of Brent","wiredScore":"","smartScore":"","repositioning":false,"notes":"Adjacent to Wembley Stadium. Benefits from major event footfall.","website":"londondesigneroutlet.com","status":"Open"}
+            {
+              "id": "lon-g-001",
+              "name": "Bluewater",
+              "postcode": "DA9 9ST",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1600000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "Next"
+              ],
+              "local_authority": "Dartford",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major out-of-town destination. Strong leisure offer including cinema and restaurants. 330 stores.",
+              "website": "bluewater.co.uk",
+              "status": "Open",
+              "managing_agent": "Landsec",
+              "investment_activity": "Landsec increased stake in Bluewater in 2024 as part of its \u00a31bn retail acquisition programme. One of Landsec's flagship 'top 1%' destinations. Further investment anticipated."
+            },
+            {
+              "id": "lon-g-002",
+              "name": "Lakeside",
+              "postcode": "RM20 2ZP",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1300000,
+              "landlord": "Unibail-Rodamco-Westfield (URW)",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark",
+                "H&M"
+              ],
+              "local_authority": "Thurrock",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major out-of-town centre. Over 250 stores with extensive leisure provision.",
+              "website": "lakeside.co.uk",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "URW ownership. Asset has faced challenges since Lakeside retail park competition but remains major regional destination."
+            },
+            {
+              "id": "lon-g-003",
+              "name": "atria Watford",
+              "postcode": "WD17 2TQ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1100000,
+              "landlord": "Cardinal Capital Group",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark"
+              ],
+              "local_authority": "Watford",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Formerly intu Watford. Major town centre scheme. Strong transport links.",
+              "website": "atriawatford.co.uk",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "Formerly intu Watford, rebranded atria Watford. New ownership following intu collapse."
+            },
+            {
+              "id": "lon-g-004",
+              "name": "The Glades",
+              "postcode": "BR1 1DD",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 600000,
+              "landlord": "Sovereign Centros",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "London Borough of Bromley",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major south London shopping destination. 150 stores.",
+              "website": "theglades.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "lon-g-005",
+              "name": "The Bentall Centre",
+              "postcode": "KT1 1TR",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 430000,
+              "landlord": "Related Argent",
+              "anchor_tenants": [
+                "John Lewis"
+              ],
+              "local_authority": "Royal Borough of Kingston upon Thames",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Premium shopping in Kingston town centre. John Lewis anchor.",
+              "website": "bentallcentre.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "lon-g-006",
+              "name": "London Designer Outlet",
+              "postcode": "HA9 0FD",
+              "type": "Outlet Centre",
+              "gla_sqft": 350000,
+              "landlord": "Realm",
+              "anchor_tenants": [
+                "Nike",
+                "Adidas",
+                "Gap",
+                "Under Armour"
+              ],
+              "local_authority": "London Borough of Brent",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Adjacent to Wembley Stadium. Benefits from major event footfall.",
+              "website": "londondesigneroutlet.com",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -35,27 +262,242 @@
         {
           "name": "Kent & Sussex",
           "assets": [
-            {"id":"se-ks-001","name":"Fremlin Walk","postcode":"ME14 1QZ","type":"Sub-Regional Shopping Centre","gla_sqft":420000,"landlord":"Lothbury Investment Management","anchor_tenants":["Marks & Spencer","Next","H&M"],"local_authority":"Maidstone","wiredScore":"","smartScore":"","repositioning":false,"notes":"Town centre scheme serving Maidstone and wider Kent catchment.","website":"fremlinwalk.co.uk","status":"Open"},
-            {"id":"se-ks-002","name":"Whitefriars","postcode":"CT1 2TQ","type":"Sub-Regional Shopping Centre","gla_sqft":750000,"landlord":"Hines","anchor_tenants":["Marks & Spencer","Primark","H&M","Next"],"local_authority":"Canterbury","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major Canterbury town centre scheme. 70 stores.","website":"whitefriarscanterbury.co.uk","status":"Open"},
-            {"id":"se-ks-003","name":"Churchill Square","postcode":"BN1 2RG","type":"Sub-Regional Shopping Centre","gla_sqft":590000,"landlord":"British Land","anchor_tenants":["Marks & Spencer","Primark","Next"],"local_authority":"Brighton and Hove","wiredScore":"","smartScore":"","repositioning":false,"notes":"Brighton's main covered shopping centre. City centre location.","website":"churchillsquare.com","status":"Open"},
-            {"id":"se-ks-004","name":"Eastgate Shopping Centre","postcode":"SS14 1AE","type":"Sub-Regional Shopping Centre","gla_sqft":500000,"landlord":"Sovereign Centros","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Basildon","wiredScore":"","smartScore":"","repositioning":false,"notes":"Basildon town centre anchor.","website":"eastgateshopping.co.uk","status":"Open"}
+            {
+              "id": "se-ks-001",
+              "name": "Fremlin Walk",
+              "postcode": "ME14 1QZ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 420000,
+              "landlord": "Lothbury Investment Management",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Maidstone",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Town centre scheme serving Maidstone and wider Kent catchment.",
+              "website": "fremlinwalk.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "se-ks-002",
+              "name": "Whitefriars",
+              "postcode": "CT1 2TQ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 750000,
+              "landlord": "Hines",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Primark",
+                "H&M",
+                "Next"
+              ],
+              "local_authority": "Canterbury",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major Canterbury town centre scheme. 70 stores.",
+              "website": "whitefriarscanterbury.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "se-ks-003",
+              "name": "Churchill Square",
+              "postcode": "BN1 2RG",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 590000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Primark",
+                "Next"
+              ],
+              "local_authority": "Brighton and Hove",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Brighton's main covered shopping centre. City centre location.",
+              "website": "churchillsquare.com",
+              "status": "Open"
+            },
+            {
+              "id": "se-ks-004",
+              "name": "Eastgate Shopping Centre",
+              "postcode": "SS14 1AE",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 500000,
+              "landlord": "Sovereign Centros",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Basildon",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Basildon town centre anchor.",
+              "website": "eastgateshopping.co.uk",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Hampshire & Berkshire",
           "assets": [
-            {"id":"se-hb-001","name":"Westquay","postcode":"SO15 1QA","type":"Regional Shopping Centre","gla_sqft":900000,"landlord":"Hammerson","anchor_tenants":["John Lewis","Marks & Spencer","Primark"],"local_authority":"Southampton","wiredScore":"","smartScore":"","repositioning":false,"notes":"Southampton's premier shopping destination. Includes Watermark leisure extension.","website":"westquay.co.uk","status":"Open"},
-            {"id":"se-hb-002","name":"The Arcade","postcode":"PO1 1RR","type":"Sub-Regional Shopping Centre","gla_sqft":320000,"landlord":"Various","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Portsmouth","wiredScore":"","smartScore":"","repositioning":false,"notes":"Portsmouth city centre retail.","website":"","status":"Open"},
-            {"id":"se-hb-003","name":"The Oracle","postcode":"RG1 2AG","type":"Regional Shopping Centre","gla_sqft":900000,"landlord":"Hammerson","anchor_tenants":["House of Fraser","Marks & Spencer","Zara","Next"],"local_authority":"Reading","wiredScore":"","smartScore":"","repositioning":false,"notes":"Reading's major retail and leisure destination. Riverside setting with strong F&B offer.","website":"theoracle.co.uk","status":"Open"},
-            {"id":"se-hb-004","name":"Friars Walk","postcode":"NP20 1HW","type":"Sub-Regional Shopping Centre","gla_sqft":330000,"landlord":"Queensberry","anchor_tenants":["Next","Marks & Spencer"],"local_authority":"Newport","wiredScore":"","smartScore":"","repositioning":false,"notes":"Newport town centre scheme.","website":"friarswalk.co.uk","status":"Open"}
+            {
+              "id": "se-hb-001",
+              "name": "Westquay",
+              "postcode": "SO15 1QA",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 900000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark"
+              ],
+              "local_authority": "Southampton",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Southampton's premier shopping destination. Hammerson fully owns since Nov 2024. Active leasing programme. Includes Watermark leisure extension.",
+              "website": "westquay.co.uk",
+              "status": "Open",
+              "managing_agent": "Hammerson",
+              "investment_activity": "Hammerson acquired remaining 50% stake in November 2024 for c.\u00a3148m \u2014 now fully owned. Part of Hammerson's \u00a3757m acquisition programme. Garmin opened UK's first store at Westquay in 2024."
+            },
+            {
+              "id": "se-hb-002",
+              "name": "The Arcade",
+              "postcode": "PO1 1RR",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 320000,
+              "landlord": "Various",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Portsmouth",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Portsmouth city centre retail.",
+              "website": "",
+              "status": "Open"
+            },
+            {
+              "id": "se-hb-003",
+              "name": "The Oracle",
+              "postcode": "RG1 2AG",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 900000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "House of Fraser",
+                "Marks & Spencer",
+                "Zara",
+                "Next"
+              ],
+              "local_authority": "Reading",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Reading's major retail and leisure destination. Riverside setting with strong F&B offer.",
+              "website": "theoracle.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "se-hb-004",
+              "name": "Friars Walk",
+              "postcode": "NP20 1HW",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 330000,
+              "landlord": "Queensberry",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer"
+              ],
+              "local_authority": "Newport",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Newport town centre scheme.",
+              "website": "friarswalk.co.uk",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Surrey & Oxfordshire",
           "assets": [
-            {"id":"se-so-001","name":"Touchwood","postcode":"B91 3GE","type":"Sub-Regional Shopping Centre","gla_sqft":700000,"landlord":"Aviva Investors","anchor_tenants":["John Lewis","Marks & Spencer","Next"],"local_authority":"Solihull","wiredScore":"","smartScore":"","repositioning":false,"notes":"Solihull town centre. Premium catchment area.","website":"touchwoodsolihull.com","status":"Open"},
-            {"id":"se-so-002","name":"Bicester Village","postcode":"OX26 6WD","type":"Outlet Centre","gla_sqft":460000,"landlord":"Bicester Collection (Value Retail)","anchor_tenants":["Gucci","Prada","Burberry","Ralph Lauren"],"local_authority":"Cherwell","wiredScore":"","smartScore":"","repositioning":false,"notes":"Premium designer outlet. Major international tourist destination. Over 160 boutiques.","website":"bicestervillage.com","status":"Open"},
-            {"id":"se-so-003","name":"Westgate Oxford","postcode":"OX1 1NX","type":"Regional Shopping Centre","gla_sqft":800000,"landlord":"Land Securities / Crown Estate","anchor_tenants":["John Lewis","Marks & Spencer","H&M","Zara"],"local_authority":"Oxford","wiredScore":"","smartScore":"","repositioning":false,"notes":"Opened 2017. Modern scheme integrated into Oxford city centre. Strong rooftop terrace offer.","website":"westgateoxford.co.uk","status":"Open"}
+            {
+              "id": "se-so-001",
+              "name": "Touchwood",
+              "postcode": "B91 3GE",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 700000,
+              "landlord": "Aviva Investors",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Solihull",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Solihull town centre. Premium catchment area.",
+              "website": "touchwoodsolihull.com",
+              "status": "Open"
+            },
+            {
+              "id": "se-so-002",
+              "name": "Bicester Village",
+              "postcode": "OX26 6WD",
+              "type": "Outlet Centre",
+              "gla_sqft": 460000,
+              "landlord": "Bicester Collection (Value Retail)",
+              "anchor_tenants": [
+                "Gucci",
+                "Prada",
+                "Burberry",
+                "Ralph Lauren"
+              ],
+              "local_authority": "Cherwell",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Premium designer outlet. Major international tourist destination. Over 160 boutiques.",
+              "website": "bicestervillage.com",
+              "status": "Open"
+            },
+            {
+              "id": "se-so-003",
+              "name": "Westgate Oxford",
+              "postcode": "OX1 1NX",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 800000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "H&M",
+                "Zara"
+              ],
+              "local_authority": "Oxford",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Hammerson fully owns since 2025. Major repositioning underway \u2014 footfall up 9%, Hollywood Bowl, TK Maxx, Zara upsize. One of UK's strongest performing centres post-repositioning.",
+              "website": "westgateoxford.co.uk",
+              "status": "Open",
+              "managing_agent": "Hammerson",
+              "investment_activity": "Hammerson acquired ADIA's 50% stake in 2025 \u2014 now fully owned. Active repositioning: Hollywood Bowl, TK Maxx opened 2025; Zara major upsize; former House of Fraser fully relet. Footfall up 9% following repositioning."
+            }
           ]
         }
       ]
@@ -66,16 +508,115 @@
         {
           "name": "Bristol & Somerset",
           "assets": [
-            {"id":"sw-bs-001","name":"Cabot Circus","postcode":"BS1 3BX","type":"Regional Shopping Centre","gla_sqft":950000,"landlord":"Hammerson / Canada Life","anchor_tenants":["Harvey Nichols","Marks & Spencer","Next","H&M"],"local_authority":"Bristol","wiredScore":"","smartScore":"","repositioning":false,"notes":"Bristol's premier shopping destination. Glazed dome atrium. Strong leisure and dining offer.","website":"cabotcircus.com","status":"Open"},
-            {"id":"sw-bs-002","name":"Cribbs Causeway","postcode":"BS34 5DG","type":"Regional Shopping Centre","gla_sqft":1000000,"landlord":"Hammerson / CBRE GI","anchor_tenants":["John Lewis","Marks & Spencer","Primark","Next"],"local_authority":"South Gloucestershire","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major out-of-town retail and leisure destination north of Bristol. 130 stores.","website":"cribbscauseway.co.uk","status":"Open"},
-            {"id":"sw-bs-003","name":"Clarks Village","postcode":"BA16 0BB","type":"Outlet Centre","gla_sqft":230000,"landlord":"Realm","anchor_tenants":["Clarks","Next","Marks & Spencer"],"local_authority":"Mendip","wiredScore":"","smartScore":"","repositioning":false,"notes":"UK's first outlet centre. Street format. Strong tourism draw.","website":"clarksvillage.co.uk","status":"Open"}
+            {
+              "id": "sw-bs-001",
+              "name": "Cabot Circus",
+              "postcode": "BS1 3BX",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 950000,
+              "landlord": "Hammerson / Canada Life",
+              "anchor_tenants": [
+                "Harvey Nichols",
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Bristol",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Bristol's premier shopping destination. Hammerson-managed. Active repositioning \u2014 ODEON, M&S flagship. Footfall up 6%.",
+              "website": "cabotcircus.com",
+              "status": "Open",
+              "managing_agent": "Hammerson",
+              "investment_activity": "Active repositioning programme: ODEON cinema signed 2024, M&S flagship opening 2025. Footfall up 6% following repositioning works."
+            },
+            {
+              "id": "sw-bs-002",
+              "name": "Cribbs Causeway",
+              "postcode": "BS34 5DG",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1000000,
+              "landlord": "Hammerson / CBRE GI",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "Next"
+              ],
+              "local_authority": "South Gloucestershire",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major out-of-town retail and leisure destination north of Bristol. 130 stores.",
+              "website": "cribbscauseway.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "sw-bs-003",
+              "name": "Clarks Village",
+              "postcode": "BA16 0BB",
+              "type": "Outlet Centre",
+              "gla_sqft": 230000,
+              "landlord": "Realm",
+              "anchor_tenants": [
+                "Clarks",
+                "Next",
+                "Marks & Spencer"
+              ],
+              "local_authority": "Mendip",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "UK's first outlet centre. Street format. Strong tourism draw.",
+              "website": "clarksvillage.co.uk",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Devon & Cornwall",
           "assets": [
-            {"id":"sw-dc-001","name":"Princesshay","postcode":"EX1 1GE","type":"Sub-Regional Shopping Centre","gla_sqft":430000,"landlord":"Legal & General","anchor_tenants":["Marks & Spencer","Next","H&M"],"local_authority":"Exeter","wiredScore":"","smartScore":"","repositioning":false,"notes":"Exeter city centre open-air and covered scheme. 60 stores.","website":"princesshay.com","status":"Open"},
-            {"id":"sw-dc-002","name":"Drake Circus","postcode":"PL1 1EA","type":"Sub-Regional Shopping Centre","gla_sqft":450000,"landlord":"British Land","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Plymouth","wiredScore":"","smartScore":"","repositioning":false,"notes":"Plymouth city centre. Leisure extension opened 2019.","website":"drakecircus.com","status":"Open"}
+            {
+              "id": "sw-dc-001",
+              "name": "Princesshay",
+              "postcode": "EX1 1GE",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 430000,
+              "landlord": "Legal & General",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Exeter",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Exeter city centre open-air and covered scheme. 60 stores.",
+              "website": "princesshay.com",
+              "status": "Open"
+            },
+            {
+              "id": "sw-dc-002",
+              "name": "Drake Circus",
+              "postcode": "PL1 1EA",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 450000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Plymouth",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Plymouth city centre. Leisure extension opened 2019.",
+              "website": "drakecircus.com",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -86,16 +627,112 @@
         {
           "name": "Essex & Hertfordshire",
           "assets": [
-            {"id":"ee-eh-001","name":"The Marlowes","postcode":"HP1 1DT","type":"Sub-Regional Shopping Centre","gla_sqft":450000,"landlord":"Marlowes Shopping Centre Ltd","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Dacorum","wiredScore":"","smartScore":"","repositioning":false,"notes":"Hemel Hempstead town centre anchor.","website":"themarlowes.co.uk","status":"Open"},
-            {"id":"ee-eh-002","name":"Howard Centre","postcode":"AL8 6HA","type":"Sub-Regional Shopping Centre","gla_sqft":350000,"landlord":"Aberdeen Standard","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Welwyn Hatfield","wiredScore":"","smartScore":"","repositioning":false,"notes":"Welwyn Garden City town centre.","website":"howardcentre.co.uk","status":"Open"},
-            {"id":"ee-eh-003","name":"Queensgate","postcode":"PE1 1NT","type":"Sub-Regional Shopping Centre","gla_sqft":600000,"landlord":"Queensgate Peterborough Ltd","anchor_tenants":["Marks & Spencer","Next","H&M","Primark"],"local_authority":"Peterborough","wiredScore":"","smartScore":"","repositioning":false,"notes":"Peterborough's main indoor shopping centre. 80 stores.","website":"queensgate-shopping.co.uk","status":"Open"},
-            {"id":"ee-eh-004","name":"Braintree Village","postcode":"CM77 8YH","type":"Outlet Centre","gla_sqft":320000,"landlord":"Realm","anchor_tenants":["M&S Outlet","Gap Outlet","Next Outlet"],"local_authority":"Braintree","wiredScore":"","smartScore":"","repositioning":false,"notes":"Village-format outlet centre. Strong leisure mix.","website":"braintreevillage.com","status":"Open"}
+            {
+              "id": "ee-eh-001",
+              "name": "The Marlowes",
+              "postcode": "HP1 1DT",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 450000,
+              "landlord": "Marlowes Shopping Centre Ltd",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Dacorum",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Hemel Hempstead town centre anchor.",
+              "website": "themarlowes.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "ee-eh-002",
+              "name": "Howard Centre",
+              "postcode": "AL8 6HA",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 350000,
+              "landlord": "Aberdeen Standard",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Welwyn Hatfield",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Welwyn Garden City town centre.",
+              "website": "howardcentre.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "ee-eh-003",
+              "name": "Queensgate",
+              "postcode": "PE1 1NT",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 600000,
+              "landlord": "Queensgate Peterborough Ltd",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M",
+                "Primark"
+              ],
+              "local_authority": "Peterborough",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Peterborough's main indoor shopping centre. 80 stores.",
+              "website": "queensgate-shopping.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "ee-eh-004",
+              "name": "Braintree Village",
+              "postcode": "CM77 8YH",
+              "type": "Outlet Centre",
+              "gla_sqft": 320000,
+              "landlord": "Realm",
+              "anchor_tenants": [
+                "M&S Outlet",
+                "Gap Outlet",
+                "Next Outlet"
+              ],
+              "local_authority": "Braintree",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Village-format outlet centre. Strong leisure mix.",
+              "website": "braintreevillage.com",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Norfolk & Suffolk",
           "assets": [
-            {"id":"ee-ns-001","name":"Chantry Place","postcode":"NR2 1QA","type":"Sub-Regional Shopping Centre","gla_sqft":600000,"landlord":"Aviva Investors","anchor_tenants":["John Lewis","Marks & Spencer","Next","H&M"],"local_authority":"Norwich","wiredScore":"","smartScore":"","repositioning":false,"notes":"Formerly Chapelfield. Norwich's premier shopping destination.","website":"chantryplace.co.uk","status":"Open"}
+            {
+              "id": "ee-ns-001",
+              "name": "Chantry Place",
+              "postcode": "NR2 1QA",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 600000,
+              "landlord": "Aviva Investors",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Norwich",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Formerly Chapelfield. Norwich's premier shopping destination.",
+              "website": "chantryplace.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -106,25 +743,205 @@
         {
           "name": "Nottinghamshire & Derbyshire",
           "assets": [
-            {"id":"em-nd-001","name":"Victoria Centre","postcode":"NG1 3QN","type":"Regional Shopping Centre","gla_sqft":900000,"landlord":"Intu Properties / Various","anchor_tenants":["Marks & Spencer","Next","H&M","Primark"],"local_authority":"Nottingham","wiredScore":"","smartScore":"","repositioning":false,"notes":"Nottingham's main covered shopping centre. Two levels with extensive food offer.","website":"victoriacentre.co.uk","status":"Open"},
-            {"id":"em-nd-002","name":"Derbion","postcode":"DE1 2PQ","type":"Regional Shopping Centre","gla_sqft":1000000,"landlord":"Crestbridge / Deka","anchor_tenants":["Marks & Spencer","Primark","Next","H&M"],"local_authority":"Derby","wiredScore":"","smartScore":"","repositioning":false,"notes":"Formerly intu Derby. Derby's main shopping centre. 180 stores.","website":"derbion.com","status":"Open"},
-            {"id":"em-nd-003","name":"East Midlands Designer Outlet","postcode":"DE55 2AZ","type":"Outlet Centre","gla_sqft":350000,"landlord":"ROS Retail Outlet Shopping","anchor_tenants":["Nike","Adidas","M&S Outlet","Gap"],"local_authority":"Bolsover","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major designer outlet serving East Midlands catchment.","website":"eastmidlandsdesigneroutlet.com","status":"Open"}
+            {
+              "id": "em-nd-001",
+              "name": "Victoria Centre",
+              "postcode": "NG1 3QN",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 900000,
+              "landlord": "Intu Properties / Various",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M",
+                "Primark"
+              ],
+              "local_authority": "Nottingham",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Nottingham's main covered shopping centre. Two levels with extensive food offer.",
+              "website": "victoriacentre.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "em-nd-002",
+              "name": "Derbion",
+              "postcode": "DE1 2PQ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1000000,
+              "landlord": "Crestbridge / Deka",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Primark",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Derby",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Formerly intu Derby. Derby's main shopping centre. 180 stores.",
+              "website": "derbion.com",
+              "status": "Open"
+            },
+            {
+              "id": "em-nd-003",
+              "name": "East Midlands Designer Outlet",
+              "postcode": "DE55 2AZ",
+              "type": "Outlet Centre",
+              "gla_sqft": 350000,
+              "landlord": "ROS Retail Outlet Shopping",
+              "anchor_tenants": [
+                "Nike",
+                "Adidas",
+                "M&S Outlet",
+                "Gap"
+              ],
+              "local_authority": "Bolsover",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major designer outlet serving East Midlands catchment.",
+              "website": "eastmidlandsdesigneroutlet.com",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Leicestershire & Northamptonshire",
           "assets": [
-            {"id":"em-ln-001","name":"Highcross Leicester","postcode":"LE1 4FQ","type":"Regional Shopping Centre","gla_sqft":1000000,"landlord":"Hammerson","anchor_tenants":["John Lewis","Marks & Spencer","Primark","Next"],"local_authority":"Leicester","wiredScore":"","smartScore":"","repositioning":false,"notes":"Leicester's main shopping destination. 130 stores with Showcase cinema.","website":"highcrossleicester.com","status":"Open"},
-            {"id":"em-ln-002","name":"Fosse Park","postcode":"LE19 1HY","type":"Retail Park","gla_sqft":700000,"landlord":"British Land","anchor_tenants":["Next","Marks & Spencer","Boots","Currys"],"local_authority":"Blaby","wiredScore":"","smartScore":"","repositioning":false,"notes":"One of the UK's largest retail parks. Major out-of-town destination.","website":"fossepark.co.uk","status":"Open"},
-            {"id":"em-ln-003","name":"Rushden Lakes","postcode":"NN10 6FH","type":"Retail Park","gla_sqft":500000,"landlord":"LaSalle Investment Management","anchor_tenants":["Next","Marks & Spencer","H&M","Primark"],"local_authority":"East Northamptonshire","wiredScore":"","smartScore":"","repositioning":false,"notes":"Lakeside retail and leisure destination. Opened 2017. Growing leisure offer.","website":"rushdenlakes.com","status":"Open"},
-            {"id":"em-ln-004","name":"Grosvenor Centre","postcode":"NN1 2EL","type":"Sub-Regional Shopping Centre","gla_sqft":500000,"landlord":"M&G Real Estate","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Northampton","wiredScore":"","smartScore":"","repositioning":false,"notes":"Northampton town centre anchor.","website":"grosvenorcentre.co.uk","status":"Open"},
-            {"id":"em-ln-005","name":"Centre MK","postcode":"MK9 3EB","type":"Regional Shopping Centre","gla_sqft":1400000,"landlord":"Hermes / Barings","anchor_tenants":["John Lewis","Marks & Spencer","Primark","Next","H&M"],"local_authority":"Milton Keynes","wiredScore":"","smartScore":"","repositioning":false,"notes":"Milton Keynes grid centre. One of the UK's largest open shopping centres. Modern Networks reference site.","website":"centre-mk.co.uk","status":"Open"}
+            {
+              "id": "em-ln-001",
+              "name": "Highcross Leicester",
+              "postcode": "LE1 4FQ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1000000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "Next"
+              ],
+              "local_authority": "Leicester",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Leicester's main shopping destination. 130 stores with Showcase cinema.",
+              "website": "highcrossleicester.com",
+              "status": "Open"
+            },
+            {
+              "id": "em-ln-002",
+              "name": "Fosse Park",
+              "postcode": "LE19 1HY",
+              "type": "Retail Park",
+              "gla_sqft": 700000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Boots",
+                "Currys"
+              ],
+              "local_authority": "Blaby",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "One of the UK's largest retail parks. Major out-of-town destination.",
+              "website": "fossepark.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "em-ln-003",
+              "name": "Rushden Lakes",
+              "postcode": "NN10 6FH",
+              "type": "Retail Park",
+              "gla_sqft": 500000,
+              "landlord": "LaSalle Investment Management",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "H&M",
+                "Primark"
+              ],
+              "local_authority": "East Northamptonshire",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Lakeside retail and leisure destination. Opened 2017. Growing leisure offer.",
+              "website": "rushdenlakes.com",
+              "status": "Open"
+            },
+            {
+              "id": "em-ln-004",
+              "name": "Grosvenor Centre",
+              "postcode": "NN1 2EL",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 500000,
+              "landlord": "M&G Real Estate",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Northampton",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Northampton town centre anchor.",
+              "website": "grosvenorcentre.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "em-ln-005",
+              "name": "Centre MK",
+              "postcode": "MK9 3EB",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1400000,
+              "landlord": "Hermes Investment Management / Barings",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Milton Keynes",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Milton Keynes grid centre. One of the UK's largest open shopping centres. Modern Networks reference site \u2014 managed IT and connectivity client.",
+              "website": "centre-mk.co.uk",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "Institutional ownership. Modern Networks reference site."
+            }
           ]
         },
         {
           "name": "Lincolnshire",
           "assets": [
-            {"id":"em-li-001","name":"St Marks","postcode":"LN5 7AR","type":"Sub-Regional Shopping Centre","gla_sqft":400000,"landlord":"Telereal Trillium","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Lincoln","wiredScore":"","smartScore":"","repositioning":false,"notes":"Lincoln city centre retail.","website":"stmarks-lincoln.co.uk","status":"Open"}
+            {
+              "id": "em-li-001",
+              "name": "St Marks",
+              "postcode": "LN5 7AR",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 400000,
+              "landlord": "Telereal Trillium",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Lincoln",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Lincoln city centre retail.",
+              "website": "stmarks-lincoln.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -135,17 +952,137 @@
         {
           "name": "Birmingham & Black Country",
           "assets": [
-            {"id":"wm-bb-001","name":"Bullring & Grand Central","postcode":"B5 4BU","type":"Regional Shopping Centre","gla_sqft":1700000,"landlord":"Hammerson / CBRE GI","anchor_tenants":["Selfridges","Marks & Spencer","Primark","Zara","H&M"],"local_authority":"Birmingham","wiredScore":"","smartScore":"","repositioning":false,"notes":"Birmingham's iconic retail destination. Selfridges blob building. Grand Central includes John Lewis and New Street Station.","website":"bullring.co.uk","status":"Open"},
-            {"id":"wm-bb-002","name":"Touchwood Solihull","postcode":"B91 3GE","type":"Sub-Regional Shopping Centre","gla_sqft":700000,"landlord":"Aviva Investors","anchor_tenants":["John Lewis","Marks & Spencer","Next"],"local_authority":"Solihull","wiredScore":"","smartScore":"","repositioning":false,"notes":"Premium Solihull catchment. Strong John Lewis anchor.","website":"touchwoodsolihull.com","status":"Open"},
-            {"id":"wm-bb-003","name":"Merry Hill","postcode":"DY5 1SY","type":"Regional Shopping Centre","gla_sqft":1700000,"landlord":"Unibail-Rodamco-Westfield","anchor_tenants":["Marks & Spencer","Primark","Next","Asda"],"local_authority":"Dudley","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major out-of-town centre. 230 stores. Strong leisure offer.","website":"merryhill.com","status":"Open"},
-            {"id":"wm-bb-004","name":"Wulfrun Centre","postcode":"WV1 3HX","type":"Sub-Regional Shopping Centre","gla_sqft":350000,"landlord":"Evolve Estates","anchor_tenants":["Primark","Next"],"local_authority":"Wolverhampton","wiredScore":"","smartScore":"","repositioning":false,"notes":"Wolverhampton town centre.","website":"","status":"Open"}
+            {
+              "id": "wm-bb-001",
+              "name": "Bullring & Grand Central",
+              "postcode": "B5 4BU",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1700000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "Selfridges",
+                "Marks & Spencer",
+                "Primark",
+                "Zara",
+                "H&M"
+              ],
+              "local_authority": "Birmingham",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Hammerson fully owns since July 2025. Major repositioning \u2014 UNIQLO, Adidas/Aston Villa, Space NK. Long-term development opportunity from 2027.",
+              "website": "bullring.co.uk",
+              "status": "Open",
+              "managing_agent": "Hammerson",
+              "investment_activity": "Hammerson acquired CPP Investments' 50% stake in Bullring & Grand Central in July 2025 \u2014 now fully owned. Active repositioning: UNIQLO first Midlands store, Aston Villa/Adidas partnership store, Space NK expansion, Next renewal, Dyson renewal. Yield compression 6bp reflecting repositioning benefit. Planned development from 2027 with c.\u00a3470m GDV."
+            },
+            {
+              "id": "wm-bb-002",
+              "name": "Touchwood Solihull",
+              "postcode": "B91 3GE",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 700000,
+              "landlord": "Aviva Investors",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Solihull",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Premium Solihull catchment. Strong John Lewis anchor.",
+              "website": "touchwoodsolihull.com",
+              "status": "Open"
+            },
+            {
+              "id": "wm-bb-003",
+              "name": "Merry Hill",
+              "postcode": "DY5 1SY",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1700000,
+              "landlord": "Unibail-Rodamco-Westfield (URW)",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Primark",
+                "Next",
+                "Asda"
+              ],
+              "local_authority": "Dudley",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "URW-owned. Identified as potential acquisition target by Landsec in 2025. Major out-of-town centre serving Black Country.",
+              "website": "merryhill.com",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "URW ownership. Merry Hill identified by Landsec as potential acquisition target in 2025, being marketed for sale by Knight Frank."
+            },
+            {
+              "id": "wm-bb-004",
+              "name": "Wulfrun Centre",
+              "postcode": "WV1 3HX",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 350000,
+              "landlord": "Evolve Estates",
+              "anchor_tenants": [
+                "Primark",
+                "Next"
+              ],
+              "local_authority": "Wolverhampton",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Wolverhampton town centre.",
+              "website": "",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Coventry & Warwickshire",
           "assets": [
-            {"id":"wm-cw-001","name":"West Orchards","postcode":"CV1 1QX","type":"Sub-Regional Shopping Centre","gla_sqft":430000,"landlord":"Aviva Investors","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Coventry","wiredScore":"","smartScore":"","repositioning":false,"notes":"Coventry city centre. Redevelopment plans in progress.","website":"westorchards.co.uk","status":"Open"},
-            {"id":"wm-cw-002","name":"McArthurGlen Cotswolds","postcode":"GL54 2HQ","type":"Outlet Centre","gla_sqft":220000,"landlord":"McArthurGlen","anchor_tenants":["Jaeger","Joules","Crew Clothing"],"local_authority":"Cotswold","wiredScore":"","smartScore":"","repositioning":false,"notes":"Premium designer outlet in Cotswolds. Strong tourism element.","website":"mcarthurglen.com/cotswolds","status":"Open"}
+            {
+              "id": "wm-cw-001",
+              "name": "West Orchards",
+              "postcode": "CV1 1QX",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 430000,
+              "landlord": "Aviva Investors",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Coventry",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Coventry city centre. Redevelopment plans in progress.",
+              "website": "westorchards.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "wm-cw-002",
+              "name": "McArthurGlen Cotswolds",
+              "postcode": "GL54 2HQ",
+              "type": "Outlet Centre",
+              "gla_sqft": 220000,
+              "landlord": "McArthurGlen",
+              "anchor_tenants": [
+                "Jaeger",
+                "Joules",
+                "Crew Clothing"
+              ],
+              "local_authority": "Cotswold",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Premium designer outlet in Cotswolds. Strong tourism element.",
+              "website": "mcarthurglen.com/cotswolds",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -156,26 +1093,228 @@
         {
           "name": "West Yorkshire",
           "assets": [
-            {"id":"yo-wy-001","name":"White Rose Centre","postcode":"LS11 8LU","type":"Regional Shopping Centre","gla_sqft":950000,"landlord":"Landsec","anchor_tenants":["Marks & Spencer","Next","Primark","H&M"],"local_authority":"Leeds","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major south Leeds retail destination. Expanding leisure offer.","website":"whiteroseleeds.com","status":"Open"},
-            {"id":"yo-wy-002","name":"Trinity Leeds","postcode":"LS1 5AT","type":"Regional Shopping Centre","gla_sqft":800000,"landlord":"Landsec","anchor_tenants":["Marks & Spencer","Apple","Zara","H&M"],"local_authority":"Leeds","wiredScore":"","smartScore":"","repositioning":false,"notes":"Leeds city centre premium scheme. Opened 2013. Glazed roof. 120 stores.","website":"trinityleeds.com","status":"Open"},
-            {"id":"yo-wy-003","name":"The Springs","postcode":"LS26 8BW","type":"Retail Park","gla_sqft":500000,"landlord":"Scarborough Group","anchor_tenants":["Next","Marks & Spencer","Boots","Cineworld"],"local_authority":"Leeds","wiredScore":"","smartScore":"","repositioning":false,"notes":"Out-of-town retail and leisure. Opened 2018. Growing destination.","website":"thespringsleeds.co.uk","status":"Open"},
-            {"id":"yo-wy-004","name":"McArthurGlen West Yorkshire","postcode":"WF3 4TN","type":"Outlet Centre","gla_sqft":370000,"landlord":"McArthurGlen","anchor_tenants":["Nike","Adidas","Gap","Marks & Spencer"],"local_authority":"Leeds","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major designer outlet serving Leeds/Bradford catchment.","website":"mcarthurglen.com/west-yorkshire","status":"Open"},
-            {"id":"yo-wy-005","name":"The Kingsgate Centre","postcode":"HD1 2QB","type":"Sub-Regional Shopping Centre","gla_sqft":350000,"landlord":"Evolve Estates","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Kirklees","wiredScore":"","smartScore":"","repositioning":false,"notes":"Huddersfield town centre.","website":"","status":"Open"}
+            {
+              "id": "yo-wy-001",
+              "name": "White Rose Centre",
+              "postcode": "LS11 8LU",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 950000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark",
+                "H&M"
+              ],
+              "local_authority": "Leeds",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Landsec flagship. Primark expansion 2025. Part of Landsec's \u00a31bn retail investment programme.",
+              "website": "whiteroseleeds.com",
+              "status": "Open",
+              "managing_agent": "Landsec",
+              "investment_activity": "Landsec flagship. Primark expansion announced 2025 (upsized store). Part of Landsec's top 1% destination strategy."
+            },
+            {
+              "id": "yo-wy-002",
+              "name": "Trinity Leeds",
+              "postcode": "LS1 5AT",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 800000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Apple",
+                "Zara",
+                "H&M"
+              ],
+              "local_authority": "Leeds",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Leeds city centre premium scheme. Opened 2013. Glazed roof. 120 stores.",
+              "website": "trinityleeds.com",
+              "status": "Open",
+              "managing_agent": "Landsec",
+              "investment_activity": "Landsec flagship. Premium city centre scheme. Part of Landsec's top 1% destination strategy."
+            },
+            {
+              "id": "yo-wy-003",
+              "name": "The Springs",
+              "postcode": "LS26 8BW",
+              "type": "Retail Park",
+              "gla_sqft": 500000,
+              "landlord": "Scarborough Group",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Boots",
+                "Cineworld"
+              ],
+              "local_authority": "Leeds",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Out-of-town retail and leisure. Opened 2018. Growing destination.",
+              "website": "thespringsleeds.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "yo-wy-004",
+              "name": "McArthurGlen West Yorkshire",
+              "postcode": "WF3 4TN",
+              "type": "Outlet Centre",
+              "gla_sqft": 370000,
+              "landlord": "McArthurGlen",
+              "anchor_tenants": [
+                "Nike",
+                "Adidas",
+                "Gap",
+                "Marks & Spencer"
+              ],
+              "local_authority": "Leeds",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major designer outlet serving Leeds/Bradford catchment.",
+              "website": "mcarthurglen.com/west-yorkshire",
+              "status": "Open"
+            },
+            {
+              "id": "yo-wy-005",
+              "name": "The Kingsgate Centre",
+              "postcode": "HD1 2QB",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 350000,
+              "landlord": "Evolve Estates",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Kirklees",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Huddersfield town centre.",
+              "website": "",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "South Yorkshire",
           "assets": [
-            {"id":"yo-sy-001","name":"Meadowhall","postcode":"S9 1EP","type":"Regional Shopping Centre","gla_sqft":1500000,"landlord":"British Land","anchor_tenants":["Marks & Spencer","Next","Primark","H&M","Boots"],"local_authority":"Sheffield","wiredScore":"","smartScore":"","repositioning":false,"notes":"One of the UK's largest shopping centres. Major leisure expansion underway. 270 stores.","website":"meadowhall.co.uk","status":"Open"},
-            {"id":"yo-sy-002","name":"Crystal Peaks","postcode":"S20 7PH","type":"Sub-Regional Shopping Centre","gla_sqft":350000,"landlord":"Various","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Sheffield","wiredScore":"","smartScore":"","repositioning":false,"notes":"South Sheffield district centre.","website":"crystalpeaks.co.uk","status":"Open"},
-            {"id":"yo-sy-003","name":"Frenchgate Centre","postcode":"DN1 1PX","type":"Sub-Regional Shopping Centre","gla_sqft":500000,"landlord":"Aberdeen Standard","anchor_tenants":["Marks & Spencer","Next","H&M","Primark"],"local_authority":"Doncaster","wiredScore":"","smartScore":"","repositioning":false,"notes":"Doncaster town centre anchor.","website":"frenchgate.co.uk","status":"Open"}
+            {
+              "id": "yo-sy-001",
+              "name": "Meadowhall",
+              "postcode": "S9 1EP",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1500000,
+              "landlord": "British Land (50%) / Norges Bank Investment Management (50%)",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark",
+                "H&M",
+                "Boots"
+              ],
+              "local_authority": "Sheffield",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "British Land/Norges Bank JV. Major leisure extension underway. One of the UK's largest shopping centres.",
+              "website": "meadowhall.co.uk",
+              "status": "Open",
+              "managing_agent": "British Land",
+              "investment_activity": "British Land and Norwegian Government Pension Fund joint venture. Major leisure extension planning underway. 270 stores."
+            },
+            {
+              "id": "yo-sy-002",
+              "name": "Crystal Peaks",
+              "postcode": "S20 7PH",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 350000,
+              "landlord": "Various",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Sheffield",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "South Sheffield district centre.",
+              "website": "crystalpeaks.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "yo-sy-003",
+              "name": "Frenchgate Centre",
+              "postcode": "DN1 1PX",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 500000,
+              "landlord": "Aberdeen Standard",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M",
+                "Primark"
+              ],
+              "local_authority": "Doncaster",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Doncaster town centre anchor.",
+              "website": "frenchgate.co.uk",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "North Yorkshire & Humberside",
           "assets": [
-            {"id":"yo-nh-001","name":"Monks Cross","postcode":"YO32 9NG","type":"Retail Park","gla_sqft":500000,"landlord":"Legal & General","anchor_tenants":["Next","Marks & Spencer","Boots","Currys"],"local_authority":"York","wiredScore":"","smartScore":"","repositioning":false,"notes":"York's main out-of-town retail destination.","website":"","status":"Open"},
-            {"id":"yo-nh-002","name":"Princes Quay","postcode":"HU1 2JZ","type":"Sub-Regional Shopping Centre","gla_sqft":500000,"landlord":"Humber Retail Park","anchor_tenants":["Marks & Spencer","Next","H&M"],"local_authority":"Kingston upon Hull","wiredScore":"","smartScore":"","repositioning":false,"notes":"Hull waterfront shopping centre.","website":"princesquay.co.uk","status":"Open"}
+            {
+              "id": "yo-nh-001",
+              "name": "Monks Cross",
+              "postcode": "YO32 9NG",
+              "type": "Retail Park",
+              "gla_sqft": 500000,
+              "landlord": "Legal & General",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Boots",
+                "Currys"
+              ],
+              "local_authority": "York",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "York's main out-of-town retail destination.",
+              "website": "",
+              "status": "Open"
+            },
+            {
+              "id": "yo-nh-002",
+              "name": "Princes Quay",
+              "postcode": "HU1 2JZ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 500000,
+              "landlord": "Humber Retail Park",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Kingston upon Hull",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Hull waterfront shopping centre.",
+              "website": "princesquay.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -186,27 +1325,249 @@
         {
           "name": "Greater Manchester",
           "assets": [
-            {"id":"nw-gm-001","name":"Manchester Arndale","postcode":"M4 3AQ","type":"Regional Shopping Centre","gla_sqft":1400000,"landlord":"Norges Bank / Manchester City Council","anchor_tenants":["Marks & Spencer","Next","Primark","H&M","Zara"],"local_authority":"Manchester","wiredScore":"","smartScore":"","repositioning":false,"notes":"One of the UK's largest city centre shopping centres. Modern Networks reference site. Major food hall and leisure offer.","website":"manchesterarndale.com","status":"Open"},
-            {"id":"nw-gm-002","name":"Trafford Centre","postcode":"M17 8EH","type":"Regional Shopping Centre","gla_sqft":1970000,"landlord":"Unibail-Rodamco-Westfield","anchor_tenants":["Marks & Spencer","Next","Primark","John Lewis","Selfridges"],"local_authority":"Trafford","wiredScore":"","smartScore":"","repositioning":false,"notes":"Europe's largest food court. Baroque architecture. Over 200 stores. Major leisure complex.","website":"traffordcentre.co.uk","status":"Open"},
-            {"id":"nw-gm-003","name":"Lowry Outlet","postcode":"M50 3AG","type":"Outlet Centre","gla_sqft":320000,"landlord":"peel","anchor_tenants":["Gap Outlet","Nike Outlet","Next Outlet"],"local_authority":"Salford","wiredScore":"","smartScore":"","repositioning":false,"notes":"Outlet centre at Salford Quays. Adjacent to The Lowry arts centre.","website":"lowryoutlet.co.uk","status":"Open"},
-            {"id":"nw-gm-004","name":"The Arndale Stockport","postcode":"SK1 1RJ","type":"Sub-Regional Shopping Centre","gla_sqft":430000,"landlord":"Stockport Council","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Stockport","wiredScore":"","smartScore":"","repositioning":false,"notes":"Stockport town centre.","website":"","status":"Open"},
-            {"id":"nw-gm-005","name":"The Galleries Wigan","postcode":"WN1 1AB","type":"Sub-Regional Shopping Centre","gla_sqft":350000,"landlord":"Realis Estates","anchor_tenants":["Next","Primark"],"local_authority":"Wigan","wiredScore":"","smartScore":"","repositioning":false,"notes":"Wigan town centre anchor.","website":"","status":"Open"}
+            {
+              "id": "nw-gm-001",
+              "name": "Manchester Arndale",
+              "postcode": "M4 3AQ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1400000,
+              "landlord": "Norges Bank Investment Management / Manchester City Council",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark",
+                "H&M",
+                "Zara"
+              ],
+              "local_authority": "Manchester",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "One of the UK's largest city centre shopping centres. Modern Networks reference site \u2014 managed IT and connectivity client. Major food hall and leisure offer.",
+              "website": "manchesterarndale.com",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "Norges Bank and Manchester City Council joint ownership. Modern Networks reference site."
+            },
+            {
+              "id": "nw-gm-002",
+              "name": "Trafford Centre",
+              "postcode": "M17 8EH",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1970000,
+              "landlord": "Unibail-Rodamco-Westfield (URW)",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark",
+                "John Lewis",
+                "Selfridges"
+              ],
+              "local_authority": "Trafford",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Europe's largest food court. Baroque architecture. Over 200 stores. Major leisure complex.",
+              "website": "traffordcentre.co.uk",
+              "status": "Open",
+              "managing_agent": "",
+              "investment_activity": "URW flagship. Major leisure complex. Over 200 stores."
+            },
+            {
+              "id": "nw-gm-003",
+              "name": "Lowry Outlet",
+              "postcode": "M50 3AG",
+              "type": "Outlet Centre",
+              "gla_sqft": 320000,
+              "landlord": "peel",
+              "anchor_tenants": [
+                "Gap Outlet",
+                "Nike Outlet",
+                "Next Outlet"
+              ],
+              "local_authority": "Salford",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Outlet centre at Salford Quays. Adjacent to The Lowry arts centre.",
+              "website": "lowryoutlet.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "nw-gm-004",
+              "name": "The Arndale Stockport",
+              "postcode": "SK1 1RJ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 430000,
+              "landlord": "Stockport Council",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Stockport",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Stockport town centre.",
+              "website": "",
+              "status": "Open"
+            },
+            {
+              "id": "nw-gm-005",
+              "name": "The Galleries Wigan",
+              "postcode": "WN1 1AB",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 350000,
+              "landlord": "Realis Estates",
+              "anchor_tenants": [
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Wigan",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Wigan town centre anchor.",
+              "website": "",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Merseyside",
           "assets": [
-            {"id":"nw-ms-001","name":"Liverpool ONE","postcode":"L1 8JQ","type":"Regional Shopping Centre","gla_sqft":1650000,"landlord":"Grosvenor","anchor_tenants":["John Lewis","Marks & Spencer","Primark","H&M","Zara"],"local_authority":"Liverpool","wiredScore":"","smartScore":"","repositioning":false,"notes":"Open-air city centre scheme. 170 stores. Rooftop terrace. Strong leisure offer.","website":"liverpool-one.com","status":"Open"},
-            {"id":"nw-ms-002","name":"Cheshire Oaks Designer Outlet","postcode":"CH65 9JJ","type":"Outlet Centre","gla_sqft":650000,"landlord":"McArthurGlen","anchor_tenants":["Marks & Spencer","Nike","Adidas","Gap"],"local_authority":"Cheshire West and Chester","wiredScore":"","smartScore":"","repositioning":false,"notes":"UK's largest designer outlet village. 145 boutiques. Major expansion completed 2020.","website":"mcarthurglen.com/cheshire-oaks","status":"Open"},
-            {"id":"nw-ms-003","name":"Birkenhead Shopping","postcode":"CH41 2XB","type":"Sub-Regional Shopping Centre","gla_sqft":800000,"landlord":"Hyundai Asset Management","anchor_tenants":["Primark","Next","Marks & Spencer"],"local_authority":"Wirral","wiredScore":"","smartScore":"","repositioning":false,"notes":"Birkenhead town centre. Includes Europa Boulevard and Pyramids Centre.","website":"","status":"Open"}
+            {
+              "id": "nw-ms-001",
+              "name": "Liverpool ONE",
+              "postcode": "L1 8JQ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1650000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "H&M",
+                "Zara"
+              ],
+              "local_authority": "Liverpool",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Landsec acquired January 2026 for \u00a3490m. Major strategic acquisition \u2014 now Landsec flagship. Open-air city centre scheme. 170 stores.",
+              "website": "liverpool-one.com",
+              "status": "Open",
+              "managing_agent": "Landsec",
+              "investment_activity": "Landsec acquired 92% stake from ADIA and Grosvenor in January 2026 for \u00a3490m. Now one of Landsec's 7 assets in the top 30 UK shopping centres. Landsec hosted capital markets day here in September 2025 reflecting confidence in the asset."
+            },
+            {
+              "id": "nw-ms-002",
+              "name": "Cheshire Oaks Designer Outlet",
+              "postcode": "CH65 9JJ",
+              "type": "Outlet Centre",
+              "gla_sqft": 650000,
+              "landlord": "McArthurGlen",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Nike",
+                "Adidas",
+                "Gap"
+              ],
+              "local_authority": "Cheshire West and Chester",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "UK's largest designer outlet village. 145 boutiques. Major expansion completed 2020.",
+              "website": "mcarthurglen.com/cheshire-oaks",
+              "status": "Open",
+              "managing_agent": "McArthurGlen",
+              "investment_activity": "McArthurGlen flagship UK outlet. Major expansion completed 2020. 145 boutiques."
+            },
+            {
+              "id": "nw-ms-003",
+              "name": "Birkenhead Shopping",
+              "postcode": "CH41 2XB",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 800000,
+              "landlord": "Hyundai Asset Management",
+              "anchor_tenants": [
+                "Primark",
+                "Next",
+                "Marks & Spencer"
+              ],
+              "local_authority": "Wirral",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Birkenhead town centre. Includes Europa Boulevard and Pyramids Centre.",
+              "website": "",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Lancashire & Cumbria",
           "assets": [
-            {"id":"nw-lc-001","name":"Fishergate Shopping Centre","postcode":"PR1 8HJ","type":"Sub-Regional Shopping Centre","gla_sqft":400000,"landlord":"BRE","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Preston","wiredScore":"","smartScore":"","repositioning":false,"notes":"Preston city centre.","website":"fishergateshopping.co.uk","status":"Open"},
-            {"id":"nw-lc-002","name":"Houndshill","postcode":"FY1 4RU","type":"Sub-Regional Shopping Centre","gla_sqft":360000,"landlord":"Blackpool Council","anchor_tenants":["Next","H&M","Primark"],"local_authority":"Blackpool","wiredScore":"","smartScore":"","repositioning":false,"notes":"Blackpool town centre. Strong seasonal footfall from tourism.","website":"houndshill.co.uk","status":"Open"},
-            {"id":"nw-lc-003","name":"Affinity Lancashire","postcode":"FY7 7LT","type":"Outlet Centre","gla_sqft":300000,"landlord":"Affinity","anchor_tenants":["M&S Outlet","Nike","Gap"],"local_authority":"Wyre","wiredScore":"","smartScore":"","repositioning":false,"notes":"Coastal outlet centre at Fleetwood.","website":"affinitylancs.co.uk","status":"Open"}
+            {
+              "id": "nw-lc-001",
+              "name": "Fishergate Shopping Centre",
+              "postcode": "PR1 8HJ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 400000,
+              "landlord": "BRE",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Preston",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Preston city centre.",
+              "website": "fishergateshopping.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "nw-lc-002",
+              "name": "Houndshill",
+              "postcode": "FY1 4RU",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 360000,
+              "landlord": "Blackpool Council",
+              "anchor_tenants": [
+                "Next",
+                "H&M",
+                "Primark"
+              ],
+              "local_authority": "Blackpool",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Blackpool town centre. Strong seasonal footfall from tourism.",
+              "website": "houndshill.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "nw-lc-003",
+              "name": "Affinity Lancashire",
+              "postcode": "FY7 7LT",
+              "type": "Outlet Centre",
+              "gla_sqft": 300000,
+              "landlord": "Affinity",
+              "anchor_tenants": [
+                "M&S Outlet",
+                "Nike",
+                "Gap"
+              ],
+              "local_authority": "Wyre",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Coastal outlet centre at Fleetwood.",
+              "website": "affinitylancs.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -217,17 +1578,143 @@
         {
           "name": "Tyne & Wear",
           "assets": [
-            {"id":"ne-tw-001","name":"MetroCentre","postcode":"NE11 9YG","type":"Regional Shopping Centre","gla_sqft":2000000,"landlord":"Sovereign Centros / Metro","anchor_tenants":["Marks & Spencer","Next","Primark","H&M","Boots"],"local_authority":"Gateshead","wiredScore":"","smartScore":"","repositioning":false,"notes":"Europe's largest shopping and leisure centre by retail space. 340 stores. Extensive leisure including cinemas and bowling.","website":"metrocentre.co.uk","status":"Open"},
-            {"id":"ne-tw-002","name":"Eldon Square","postcode":"NE1 7JB","type":"Regional Shopping Centre","gla_sqft":1200000,"landlord":"British Land","anchor_tenants":["John Lewis","Marks & Spencer","Primark","Next"],"local_authority":"Newcastle upon Tyne","wiredScore":"","smartScore":"","repositioning":false,"notes":"Newcastle city centre. Includes Eldon Garden and Monument Mall. Major leisure quarter adjacent.","website":"eldonsquare.co.uk","status":"Open"},
-            {"id":"ne-tw-003","name":"The Bridges","postcode":"SR1 3LP","type":"Sub-Regional Shopping Centre","gla_sqft":600000,"landlord":"Evolve Estates","anchor_tenants":["Marks & Spencer","Primark","Next","H&M"],"local_authority":"Sunderland","wiredScore":"","smartScore":"","repositioning":false,"notes":"Sunderland city centre anchor. 100 stores.","website":"thebridges.co.uk","status":"Open"},
-            {"id":"ne-tw-004","name":"Dalton Park","postcode":"SR8 2HU","type":"Outlet Centre","gla_sqft":300000,"landlord":"Dalton Park","anchor_tenants":["Marks & Spencer","Next Outlet","Gap"],"local_authority":"County Durham","wiredScore":"","smartScore":"","repositioning":false,"notes":"Outlet and retail park serving County Durham and south Tyne catchment.","website":"daltonpark.co.uk","status":"Open"}
+            {
+              "id": "ne-tw-001",
+              "name": "MetroCentre",
+              "postcode": "NE11 9YG",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 2000000,
+              "landlord": "Metrocentre Partnership (Church Commissioners / GIC Real Estate)",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark",
+                "H&M",
+                "Boots"
+              ],
+              "local_authority": "Gateshead",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": true,
+              "notes": "Managed by Sovereign Centros/CBRE on behalf of Church Commissioners and GIC Real Estate. Active repositioning \u2014 NHS CDC, Crescent refurbishment, Sephora, solar/EV investment. 40th anniversary 2026.",
+              "website": "metrocentre.co.uk",
+              "status": "Open",
+              "managing_agent": "Sovereign Centros / CBRE",
+              "investment_activity": "Asset managed by Sovereign Centros (part of CBRE) on behalf of Metrocentre Partnership since 2020 following Intu collapse. \u00a370m+ investment programme ongoing. \u00a36m Crescent refurbishment announced 2026 for 40th anniversary. NHS Community Diagnostics Centre opened Oct 2024. Largest solar installation at a UK shopping centre. 260+ transactions since 2020."
+            },
+            {
+              "id": "ne-tw-002",
+              "name": "Eldon Square",
+              "postcode": "NE1 7JB",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1200000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "Next"
+              ],
+              "local_authority": "Newcastle upon Tyne",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Newcastle city centre. Includes Eldon Garden and Monument Mall. Major leisure quarter adjacent.",
+              "website": "eldonsquare.co.uk",
+              "status": "Open",
+              "managing_agent": "British Land",
+              "investment_activity": "British Land-owned flagship in Newcastle city centre."
+            },
+            {
+              "id": "ne-tw-003",
+              "name": "The Bridges",
+              "postcode": "SR1 3LP",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 600000,
+              "landlord": "Evolve Estates",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Primark",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Sunderland",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Sunderland city centre anchor. 100 stores.",
+              "website": "thebridges.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "ne-tw-004",
+              "name": "Dalton Park",
+              "postcode": "SR8 2HU",
+              "type": "Outlet Centre",
+              "gla_sqft": 300000,
+              "landlord": "Dalton Park",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next Outlet",
+                "Gap"
+              ],
+              "local_authority": "County Durham",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Outlet and retail park serving County Durham and south Tyne catchment.",
+              "website": "daltonpark.co.uk",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Teesside & County Durham",
           "assets": [
-            {"id":"ne-td-001","name":"Teesside Park","postcode":"TS17 7BP","type":"Retail Park","gla_sqft":1100000,"landlord":"British Land","anchor_tenants":["Next","Marks & Spencer","Primark","Cineworld","Boots"],"local_authority":"Stockton-on-Tees","wiredScore":"","smartScore":"","repositioning":false,"notes":"One of the UK's largest retail parks. Major leisure offer including cinema and restaurants.","website":"teessidepark.co.uk","status":"Open"},
-            {"id":"ne-td-002","name":"Middleton Grange","postcode":"TS24 7RR","type":"Sub-Regional Shopping Centre","gla_sqft":400000,"landlord":"Hartlepool BC","anchor_tenants":["Marks & Spencer","Next","Primark"],"local_authority":"Hartlepool","wiredScore":"","smartScore":"","repositioning":false,"notes":"Hartlepool town centre anchor.","website":"middletongrange.co.uk","status":"Open"}
+            {
+              "id": "ne-td-001",
+              "name": "Teesside Park",
+              "postcode": "TS17 7BP",
+              "type": "Retail Park",
+              "gla_sqft": 1100000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Primark",
+                "Cineworld",
+                "Boots"
+              ],
+              "local_authority": "Stockton-on-Tees",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "One of the UK's largest retail parks. Major leisure offer including cinema and restaurants.",
+              "website": "teessidepark.co.uk",
+              "status": "Open",
+              "managing_agent": "British Land",
+              "investment_activity": "British Land-owned retail park. Strong trading performance reported 2025."
+            },
+            {
+              "id": "ne-td-002",
+              "name": "Middleton Grange",
+              "postcode": "TS24 7RR",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 400000,
+              "landlord": "Hartlepool BC",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Hartlepool",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Hartlepool town centre anchor.",
+              "website": "middletongrange.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -238,32 +1725,258 @@
         {
           "name": "Greater Glasgow",
           "assets": [
-            {"id":"sc-gg-001","name":"Braehead","postcode":"PA4 8XQ","type":"Regional Shopping Centre","gla_sqft":1060000,"landlord":"Peel","anchor_tenants":["IKEA","Primark","Marks & Spencer","Next"],"local_authority":"Renfrewshire","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major out-of-town centre near Glasgow. Over 100 stores. SOAR indoor adventure attraction.","website":"braehead.co.uk","status":"Open"},
-            {"id":"sc-gg-002","name":"Silverburn","postcode":"G53 6AG","type":"Regional Shopping Centre","gla_sqft":1100000,"landlord":"Hammerson","anchor_tenants":["Marks & Spencer","Tesco Extra","Next","Cineworld"],"local_authority":"Glasgow","wiredScore":"","smartScore":"","repositioning":false,"notes":"South Glasgow. Over 100 stores. Leisure extension including cinema and restaurants.","website":"silverburncentre.com","status":"Open"},
-            {"id":"sc-gg-003","name":"Buchanan Galleries","postcode":"G1 2GF","type":"Regional Shopping Centre","gla_sqft":680000,"landlord":"Land Securities","anchor_tenants":["John Lewis","Next","H&M","Zara"],"local_authority":"Glasgow","wiredScore":"","smartScore":"","repositioning":false,"notes":"Glasgow city centre. Connected to Buchanan Street — Scotland's premium retail street.","website":"buchanangalleries.co.uk","status":"Open"},
-            {"id":"sc-gg-004","name":"St Enoch Centre","postcode":"G1 4BW","type":"Sub-Regional Shopping Centre","gla_sqft":700000,"landlord":"AEW Europe","anchor_tenants":["Primark","H&M","Next"],"local_authority":"Glasgow","wiredScore":"","smartScore":"","repositioning":false,"notes":"Glasgow city centre. Glazed atrium. Repositioning underway.","website":"stenoch.com","status":"Open"},
-            {"id":"sc-gg-005","name":"McArthurGlen Glasgow","postcode":"G71 6NY","type":"Outlet Centre","gla_sqft":270000,"landlord":"McArthurGlen","anchor_tenants":["Nike","Adidas","Gap","Marks & Spencer"],"local_authority":"South Lanarkshire","wiredScore":"","smartScore":"","repositioning":false,"notes":"Designer outlet serving Glasgow and west of Scotland.","website":"mcarthurglen.com/glasgow","status":"Open"}
+            {
+              "id": "sc-gg-001",
+              "name": "Braehead",
+              "postcode": "PA4 8XQ",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1060000,
+              "landlord": "Peel",
+              "anchor_tenants": [
+                "IKEA",
+                "Primark",
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Renfrewshire",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major out-of-town centre near Glasgow. Over 100 stores. SOAR indoor adventure attraction.",
+              "website": "braehead.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "sc-gg-002",
+              "name": "Silverburn",
+              "postcode": "G53 6AG",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1100000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Tesco Extra",
+                "Next",
+                "Cineworld"
+              ],
+              "local_authority": "Glasgow",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "South Glasgow. Over 100 stores. Leisure extension including cinema and restaurants.",
+              "website": "silverburncentre.com",
+              "status": "Open",
+              "managing_agent": "Hammerson",
+              "investment_activity": "Hammerson-owned. Part of Hammerson's UK flagship portfolio."
+            },
+            {
+              "id": "sc-gg-003",
+              "name": "Buchanan Galleries",
+              "postcode": "G1 2GF",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 680000,
+              "landlord": "Land Securities",
+              "anchor_tenants": [
+                "John Lewis",
+                "Next",
+                "H&M",
+                "Zara"
+              ],
+              "local_authority": "Glasgow",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Glasgow city centre. Connected to Buchanan Street \u2014 Scotland's premium retail street.",
+              "website": "buchanangalleries.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "sc-gg-004",
+              "name": "St Enoch Centre",
+              "postcode": "G1 4BW",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 700000,
+              "landlord": "AEW Europe",
+              "anchor_tenants": [
+                "Primark",
+                "H&M",
+                "Next"
+              ],
+              "local_authority": "Glasgow",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Glasgow city centre. Glazed atrium. Repositioning underway.",
+              "website": "stenoch.com",
+              "status": "Open"
+            },
+            {
+              "id": "sc-gg-005",
+              "name": "McArthurGlen Glasgow",
+              "postcode": "G71 6NY",
+              "type": "Outlet Centre",
+              "gla_sqft": 270000,
+              "landlord": "McArthurGlen",
+              "anchor_tenants": [
+                "Nike",
+                "Adidas",
+                "Gap",
+                "Marks & Spencer"
+              ],
+              "local_authority": "South Lanarkshire",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Designer outlet serving Glasgow and west of Scotland.",
+              "website": "mcarthurglen.com/glasgow",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Edinburgh & Lothians",
           "assets": [
-            {"id":"sc-el-001","name":"St James Quarter","postcode":"EH1 3SS","type":"Regional Shopping Centre","gla_sqft":850000,"landlord":"Nuveen","anchor_tenants":["Marks & Spencer","Zara","H&M","Primark"],"local_authority":"Edinburgh","wiredScore":"","smartScore":"","repositioning":false,"notes":"Opened 2021. Edinburgh's major new retail and leisure destination. W Hotel on site. 100 stores.","website":"stjamesquarter.com","status":"Open"},
-            {"id":"sc-el-002","name":"Ocean Terminal","postcode":"EH6 6JJ","type":"Sub-Regional Shopping Centre","gla_sqft":600000,"landlord":"Henderson Park","anchor_tenants":["Marks & Spencer","Next","Vue Cinema"],"local_authority":"Edinburgh","wiredScore":"","smartScore":"","repositioning":false,"notes":"Leith waterfront. Adjacent to Royal Yacht Britannia. Repositioning with more leisure.","website":"oceanterminal.com","status":"Open"},
-            {"id":"sc-el-003","name":"Fort Kinnaird","postcode":"EH15 3RD","type":"Retail Park","gla_sqft":900000,"landlord":"British Land","anchor_tenants":["Next","Marks & Spencer","Primark","Cineworld","Boots"],"local_authority":"Edinburgh","wiredScore":"","smartScore":"","repositioning":false,"notes":"Edinburgh's major out-of-town retail park. Strong leisure offer.","website":"fortkinnaird.com","status":"Open"}
+            {
+              "id": "sc-el-001",
+              "name": "St James Quarter",
+              "postcode": "EH1 3SS",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 850000,
+              "landlord": "Nuveen Real Estate",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Zara",
+                "H&M",
+                "Primark"
+              ],
+              "local_authority": "Edinburgh",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Opened 2021. Edinburgh's major new retail and leisure destination. W Hotel on site. 100 stores. Nuveen-owned.",
+              "website": "stjamesquarter.com",
+              "status": "Open",
+              "managing_agent": "Nuveen",
+              "investment_activity": "Opened 2021. Edinburgh's major new retail destination. W Hotel on site. Active leasing."
+            },
+            {
+              "id": "sc-el-002",
+              "name": "Ocean Terminal",
+              "postcode": "EH6 6JJ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 600000,
+              "landlord": "Henderson Park",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "Vue Cinema"
+              ],
+              "local_authority": "Edinburgh",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Leith waterfront. Adjacent to Royal Yacht Britannia. Repositioning with more leisure.",
+              "website": "oceanterminal.com",
+              "status": "Open"
+            },
+            {
+              "id": "sc-el-003",
+              "name": "Fort Kinnaird",
+              "postcode": "EH15 3RD",
+              "type": "Retail Park",
+              "gla_sqft": 900000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Primark",
+                "Cineworld",
+                "Boots"
+              ],
+              "local_authority": "Edinburgh",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Edinburgh's major out-of-town retail park. Strong leisure offer.",
+              "website": "fortkinnaird.com",
+              "status": "Open",
+              "managing_agent": "British Land",
+              "investment_activity": "British Land retail park portfolio. Strong trading performance."
+            }
           ]
         },
         {
           "name": "Aberdeen & North Scotland",
           "assets": [
-            {"id":"sc-an-001","name":"Union Square","postcode":"AB11 5PN","type":"Regional Shopping Centre","gla_sqft":630000,"landlord":"British Land","anchor_tenants":["Marks & Spencer","Next","H&M","Cineworld"],"local_authority":"Aberdeen","wiredScore":"","smartScore":"","repositioning":false,"notes":"Aberdeen city centre. Adjacent to train station. Strong food and leisure offer.","website":"union-square.co.uk","status":"Open"},
-            {"id":"sc-an-002","name":"Bon Accord & St Nicholas","postcode":"AB25 1HZ","type":"Sub-Regional Shopping Centre","gla_sqft":650000,"landlord":"Standard Life / Local Authority","anchor_tenants":["Marks & Spencer","Debenhams site","Next","Primark"],"local_authority":"Aberdeen","wiredScore":"","smartScore":"","repositioning":false,"notes":"Aberdeen city centre. Undergoing repositioning following anchor tenant closures.","website":"bonaccord.co.uk","status":"Open"}
+            {
+              "id": "sc-an-001",
+              "name": "Union Square",
+              "postcode": "AB11 5PN",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 630000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M",
+                "Cineworld"
+              ],
+              "local_authority": "Aberdeen",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Aberdeen city centre. Adjacent to train station. Strong food and leisure offer.",
+              "website": "union-square.co.uk",
+              "status": "Open",
+              "managing_agent": "British Land",
+              "investment_activity": "British Land-owned city centre scheme."
+            },
+            {
+              "id": "sc-an-002",
+              "name": "Bon Accord & St Nicholas",
+              "postcode": "AB25 1HZ",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 650000,
+              "landlord": "Standard Life / Local Authority",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Debenhams site",
+                "Next",
+                "Primark"
+              ],
+              "local_authority": "Aberdeen",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Aberdeen city centre. Undergoing repositioning following anchor tenant closures.",
+              "website": "bonaccord.co.uk",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "Dundee & Tayside",
           "assets": [
-            {"id":"sc-dt-001","name":"Overgate Centre","postcode":"DD1 1UR","type":"Sub-Regional Shopping Centre","gla_sqft":400000,"landlord":"Hammerson","anchor_tenants":["Marks & Spencer","Next","H&M"],"local_authority":"Dundee","wiredScore":"","smartScore":"","repositioning":false,"notes":"Dundee city centre.","website":"overgate.co.uk","status":"Open"}
+            {
+              "id": "sc-dt-001",
+              "name": "Overgate Centre",
+              "postcode": "DD1 1UR",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 400000,
+              "landlord": "Hammerson",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next",
+                "H&M"
+              ],
+              "local_authority": "Dundee",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Dundee city centre.",
+              "website": "overgate.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
@@ -274,21 +1987,220 @@
         {
           "name": "South Wales",
           "assets": [
-            {"id":"wa-sw-001","name":"St David's Dewi Sant","postcode":"CF10 2EL","type":"Regional Shopping Centre","gla_sqft":1400000,"landlord":"Landsec / Inditex","anchor_tenants":["John Lewis","Marks & Spencer","Primark","H&M","Zara"],"local_authority":"Cardiff","wiredScore":"","smartScore":"","repositioning":false,"notes":"Cardiff's major shopping destination. St David's 1 and 2 combined. 180 stores.","website":"stdavidscardiff.com","status":"Open"},
-            {"id":"wa-sw-002","name":"Cardiff Bay Retail Park","postcode":"CF10 4AU","type":"Retail Park","gla_sqft":250000,"landlord":"Various","anchor_tenants":["Boots","Pets at Home","Sports Direct"],"local_authority":"Cardiff","wiredScore":"","smartScore":"","repositioning":false,"notes":"Cardiff Bay waterfront. Adjacent to Mermaid Quay leisure scheme.","website":"","status":"Open"},
-            {"id":"wa-sw-003","name":"M Cwmbran","postcode":"NP44 1PU","type":"Sub-Regional Shopping Centre","gla_sqft":740000,"landlord":"M&G Real Estate","anchor_tenants":["Asda","Primark","Marks & Spencer","Next"],"local_authority":"Torfaen","wiredScore":"","smartScore":"","repositioning":false,"notes":"Formerly Cwmbran Centre. One of Wales' largest shopping centres. 100 stores.","website":"mcwmbran.co.uk","status":"Open"},
-            {"id":"wa-sw-004","name":"Friars Walk Newport","postcode":"NP20 1HW","type":"Sub-Regional Shopping Centre","gla_sqft":330000,"landlord":"Queensberry","anchor_tenants":["Next","Marks & Spencer","Cineworld"],"local_authority":"Newport","wiredScore":"","smartScore":"","repositioning":false,"notes":"Opened 2015. Newport town centre regeneration scheme.","website":"friarswalk.co.uk","status":"Open"},
-            {"id":"wa-sw-005","name":"McArthurGlen Cardiff","postcode":"CF3 2PY","type":"Outlet Centre","gla_sqft":350000,"landlord":"McArthurGlen","anchor_tenants":["Nike","Adidas","Gap","Marks & Spencer"],"local_authority":"Cardiff","wiredScore":"","smartScore":"","repositioning":false,"notes":"Designer outlet east of Cardiff. Growing tenant mix.","website":"mcarthurglen.com/cardiff","status":"Open"},
-            {"id":"wa-sw-006","name":"Parc Trostre","postcode":"SA14 9UF","type":"Retail Park","gla_sqft":380000,"landlord":"Landsec","anchor_tenants":["Next","Marks & Spencer","Boots","Currys"],"local_authority":"Carmarthenshire","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major retail park serving Llanelli and west Wales.","website":"parctrostre.co.uk","status":"Open"},
-            {"id":"wa-sw-007","name":"Parc Tawe","postcode":"SA1 2AJ","type":"Retail Park","gla_sqft":280000,"landlord":"Swansea Council","anchor_tenants":["B&Q","Sports Direct"],"local_authority":"Swansea","wiredScore":"","smartScore":"","repositioning":false,"notes":"Swansea riverside retail park.","website":"","status":"Open"}
+            {
+              "id": "wa-sw-001",
+              "name": "St David's Dewi Sant",
+              "postcode": "CF10 2EL",
+              "type": "Regional Shopping Centre",
+              "gla_sqft": 1400000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "John Lewis",
+                "Marks & Spencer",
+                "Primark",
+                "H&M",
+                "Zara"
+              ],
+              "local_authority": "Cardiff",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Cardiff's major shopping destination. St David's 1 and 2 combined. 180 stores.",
+              "website": "stdavidscardiff.com",
+              "status": "Open",
+              "managing_agent": "Landsec",
+              "investment_activity": "Landsec flagship. St David's 1 and 2 combined. Part of Landsec's top 1% destination strategy."
+            },
+            {
+              "id": "wa-sw-002",
+              "name": "Cardiff Bay Retail Park",
+              "postcode": "CF10 4AU",
+              "type": "Retail Park",
+              "gla_sqft": 250000,
+              "landlord": "Various",
+              "anchor_tenants": [
+                "Boots",
+                "Pets at Home",
+                "Sports Direct"
+              ],
+              "local_authority": "Cardiff",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Cardiff Bay waterfront. Adjacent to Mermaid Quay leisure scheme.",
+              "website": "",
+              "status": "Open"
+            },
+            {
+              "id": "wa-sw-003",
+              "name": "M Cwmbran",
+              "postcode": "NP44 1PU",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 740000,
+              "landlord": "M&G Real Estate",
+              "anchor_tenants": [
+                "Asda",
+                "Primark",
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Torfaen",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Formerly Cwmbran Centre. One of Wales' largest shopping centres. 100 stores.",
+              "website": "mcwmbran.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "wa-sw-004",
+              "name": "Friars Walk Newport",
+              "postcode": "NP20 1HW",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 330000,
+              "landlord": "Queensberry",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Cineworld"
+              ],
+              "local_authority": "Newport",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Opened 2015. Newport town centre regeneration scheme.",
+              "website": "friarswalk.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "wa-sw-005",
+              "name": "McArthurGlen Cardiff",
+              "postcode": "CF3 2PY",
+              "type": "Outlet Centre",
+              "gla_sqft": 350000,
+              "landlord": "McArthurGlen",
+              "anchor_tenants": [
+                "Nike",
+                "Adidas",
+                "Gap",
+                "Marks & Spencer"
+              ],
+              "local_authority": "Cardiff",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Designer outlet east of Cardiff. Growing tenant mix.",
+              "website": "mcarthurglen.com/cardiff",
+              "status": "Open"
+            },
+            {
+              "id": "wa-sw-006",
+              "name": "Parc Trostre",
+              "postcode": "SA14 9UF",
+              "type": "Retail Park",
+              "gla_sqft": 380000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Boots",
+                "Currys"
+              ],
+              "local_authority": "Carmarthenshire",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major retail park serving Llanelli and west Wales.",
+              "website": "parctrostre.co.uk",
+              "status": "Open"
+            },
+            {
+              "id": "wa-sw-007",
+              "name": "Parc Tawe",
+              "postcode": "SA1 2AJ",
+              "type": "Retail Park",
+              "gla_sqft": 280000,
+              "landlord": "Swansea Council",
+              "anchor_tenants": [
+                "B&Q",
+                "Sports Direct"
+              ],
+              "local_authority": "Swansea",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Swansea riverside retail park.",
+              "website": "",
+              "status": "Open"
+            }
           ]
         },
         {
           "name": "North Wales",
           "assets": [
-            {"id":"wa-nw-001","name":"Broughton Shopping Park","postcode":"CH4 0GZ","type":"Retail Park","gla_sqft":450000,"landlord":"British Land","anchor_tenants":["Next","Marks & Spencer","Primark","Boots"],"local_authority":"Flintshire","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major north Wales retail destination. Serves Chester and north Wales catchment.","website":"broughtonshoppingpark.com","status":"Open"},
-            {"id":"wa-nw-002","name":"Regent Street Wrexham","postcode":"LL11 1RB","type":"Sub-Regional Shopping Centre","gla_sqft":280000,"landlord":"Wrexham Council","anchor_tenants":["Marks & Spencer","Next"],"local_authority":"Wrexham","wiredScore":"","smartScore":"","repositioning":false,"notes":"Wrexham town centre.","website":"","status":"Open"},
-            {"id":"wa-nw-003","name":"Talbot Green Shopping Park","postcode":"CF72 8ND","type":"Retail Park","gla_sqft":350000,"landlord":"Landsec","anchor_tenants":["Next","Marks & Spencer","Boots","Currys"],"local_authority":"Rhondda Cynon Taf","wiredScore":"","smartScore":"","repositioning":false,"notes":"Major retail park serving Valleys communities north of Cardiff.","website":"talbotgreen.co.uk","status":"Open"}
+            {
+              "id": "wa-nw-001",
+              "name": "Broughton Shopping Park",
+              "postcode": "CH4 0GZ",
+              "type": "Retail Park",
+              "gla_sqft": 450000,
+              "landlord": "British Land",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Primark",
+                "Boots"
+              ],
+              "local_authority": "Flintshire",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major north Wales retail destination. Serves Chester and north Wales catchment.",
+              "website": "broughtonshoppingpark.com",
+              "status": "Open",
+              "managing_agent": "British Land",
+              "investment_activity": "British Land retail park. Strong demand from North Wales and Chester catchment."
+            },
+            {
+              "id": "wa-nw-002",
+              "name": "Regent Street Wrexham",
+              "postcode": "LL11 1RB",
+              "type": "Sub-Regional Shopping Centre",
+              "gla_sqft": 280000,
+              "landlord": "Wrexham Council",
+              "anchor_tenants": [
+                "Marks & Spencer",
+                "Next"
+              ],
+              "local_authority": "Wrexham",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Wrexham town centre.",
+              "website": "",
+              "status": "Open"
+            },
+            {
+              "id": "wa-nw-003",
+              "name": "Talbot Green Shopping Park",
+              "postcode": "CF72 8ND",
+              "type": "Retail Park",
+              "gla_sqft": 350000,
+              "landlord": "Landsec",
+              "anchor_tenants": [
+                "Next",
+                "Marks & Spencer",
+                "Boots",
+                "Currys"
+              ],
+              "local_authority": "Rhondda Cynon Taf",
+              "wiredScore": "",
+              "smartScore": "",
+              "repositioning": false,
+              "notes": "Major retail park serving Valleys communities north of Cardiff.",
+              "website": "talbotgreen.co.uk",
+              "status": "Open"
+            }
           ]
         }
       ]
