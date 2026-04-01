@@ -383,7 +383,11 @@ def generate_opportunities(park, ofcom, companies, ws_data=None):
 
     # Repositioning
     if repositioning:
-        ops.append("Repositioning connectivity brief — redevelopment creates opportunity to specify modern network infrastructure from the outset rather than retrofit")
+        invest = (park.get("investment_activity") or "").lower()
+        if invest:
+            ops.append(f"Active repositioning — infrastructure brief is live. {park.get('investment_activity','')[:150]}")
+        else:
+            ops.append("Repositioning connectivity brief — redevelopment creates opportunity to specify modern network infrastructure from the outset rather than retrofit")
 
     # Anchor tenant triggers
     if any(a in anchors for a in ["vue cinema", "cineworld", "odeon", "showcase cinema"]):
@@ -444,6 +448,18 @@ def generate_flags(park, ofcom):
     if any(x in notes for x in ["vacant", "closure", "administration", "empty"]):
         flags.append(("⚠ Anchor vacancy",
                       "Potential anchor tenant closure — repositioning likely with new connectivity requirements"))
+
+    # Investment activity flag
+    invest = park.get("investment_activity","") or ""
+    if invest and len(invest) > 20:
+        flags.append(("ℹ Active investment programme",
+                      invest[:200]))
+
+    # Managing agent flag — useful for approach strategy
+    agent = park.get("managing_agent","") or ""
+    if agent and agent.lower() not in ("","—"):
+        flags.append(("ℹ Managing agent",
+                      f"Asset managed by {agent} — approach through agent relationship may be more effective than direct landlord contact"))
 
     return flags
 
@@ -546,8 +562,10 @@ def build_park_profile_table(story, park, styles, ws_data=None):
         ("Local Authority",   park.get("local_authority", "")),
         ("GLA",               f"{park.get('gla_sqft',0):,} sq ft" if park.get('gla_sqft') else "—"),
         ("Landlord",          park.get("landlord", "")),
+        ("Managing Agent",    park.get("managing_agent", "") or "—"),
         ("Anchor Tenants",    ", ".join(park.get("anchor_tenants") or [])),
         ("Repositioning",     "Yes — active redevelopment" if park.get("repositioning") else "No"),
+        ("Investment Activity", park.get("investment_activity", "") or "—"),
         ("WiredScore",        _ws_label(ws_data, "wiredScore") if ws_data else park.get("wiredScore") or "Not verified — check wiredscore.com/map"),
         ("SmartScore",        _ws_label(ws_data, "smartScore") if ws_data else park.get("smartScore") or "Not verified — check wiredscore.com/map"),
         ("Status",            park.get("status", "")),
@@ -1095,13 +1113,17 @@ if not all_parks_mode:
             st.markdown("**🏬 Asset Profile**")
             st.text(f"  Type:     {park.get('type','—')[:45]}")
             st.text(f"  Landlord: {park.get('landlord','—')[:45]}")
+            if park.get("managing_agent"):
+                st.text(f"  Agent:    {park.get('managing_agent','—')[:45]}")
             st.text(f"  GLA:      {park.get('gla_sqft',0):,} sq ft" if park.get("gla_sqft") else "  GLA:      —")
             st.text(f"  Status:   {park.get('status','—')}")
             st.text(f"  LA:       {park.get('local_authority','—')}")
             anchors = park.get("anchor_tenants") or []
             if anchors:
                 st.text(f"  Anchors:  {', '.join(anchors[:3])}")
-            if park.get("notes"):
+            if park.get("investment_activity"):
+                st.caption(f"📈 {park['investment_activity'][:200]}")
+            elif park.get("notes"):
                 st.caption(park["notes"][:200])
             if companies:
                 active = [c for c in companies if c.get("company_status","").lower()=="active"]
